@@ -1,0 +1,16 @@
+<div class="condition-list-wrap">
+    <div class="condition-list">
+        <ul>
+            <li *ngFor="let condition of conditions; let i = index">
+                <div class=" check fL">
+                    <input type="checkbox" id="{{ i + 1 }}" [(ngModel)]="condition.is_selected"/>
+                    <label class="custom-checkbox regular-checkbox" [attr.for]="i + 1"></label>
+                </div>
+                <div class="condition fL">
+                    <label [attr.for]="i + 1">{{condition.cond_desc}}</label>
+                </div>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
+</div>

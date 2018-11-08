@@ -1,0 +1,5 @@
+<li [class]="menu.skin" [routerLink]="menu.navUrl" routerLinkActive="active">
+	<span><sup *ngIf="menu.unreadActivityCount > 0">{{menu.unreadActivityCount > 100 ? '99+' : menu.unreadActivityCount}}</sup>
+                             <a href="javascript:void(0);">{{menu.displayText}}</a></span>
+
+</li>

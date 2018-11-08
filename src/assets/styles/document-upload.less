@@ -1,0 +1,390 @@
+.main-content{
+    .doc-upload-wrap{
+        .doc-upload-box{
+            .condition-list-wrap{
+                .step-header{
+                    font-size:18px;
+                }
+                .condition-list{
+                    .padding(20px,20px,20px,20px);
+                    background: @secondary-background;
+                    @media @mobile{
+                        .padding(10px,10px,10px,10px);
+                    }
+                    ul{
+                        li{
+                            .check{
+                                margin-right:14px;
+                                @media @mobile{
+                                    margin-right:4px;
+                                }
+                            }
+                            .condition{
+                                width:90%;
+                                .margin(0,0,15px,0);
+                                font-size:16px;
+                                @media @mobile{
+                                    width:85%;
+                                }
+                                label{
+                                    .margin(0,0,0,0);
+                                    font-weight: normal;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .doc-select-wrap{
+                margin-top:30px;
+                .step-header{
+                    font-size:18px;
+                }
+                .choose-doc{
+                    margin-top:20px;
+                    .choose-doc-btn{
+                        border-radius: 2px;
+                        border: 0;
+                        width:150px;
+                        .padding(7px,15px,15px,10px);
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .completed-docs{
+                margin-top:15px;
+                .padding(15px,0,0,0);
+                border-top: 1px solid @base-primary-color;
+                .step-header{
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                .upload-status-wrap{
+                    background:@secondary-background;
+                    .padding(20px,20px,20px,20px);
+                    margin-bottom: 20px;
+                    .status{
+                        @media @mobile,@large-mobile,@small-tablet{
+                            text-align:left;
+                            margin-bottom:10px;
+                        }
+                        .status-icon{
+                            width:25px;
+                            height:25px;
+                            display: inline-block;
+                            background-repeat: no-repeat;
+                            background-size:100% 100%;
+                            margin-right:10px;
+                            vertical-align: middle;
+                        }
+                        .success{
+                            .success-icon{
+                                background-image: url("@{base-url}images/success.png");
+                            
+                            }
+                        }
+                        .retry{
+                            .retry-icon{
+                                background-image: url("@{base-url}images/retry.png");
+                            }
+                        }
+                    }
+
+                    .condition-selected{
+                        .condition{
+                            ul{
+                                li{
+                                    margin-bottom: 15px;
+                                    &:last-child{
+                                        margin-bottom:0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .status-label{
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                    .status-info{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+.done-wrap{
+    .padding(15px,0,15px,0);
+    button{
+        font-size: 16px;
+        width: 150px;
+    }
+}
+
+.document-selector{
+        .modal-dialog {
+            width:770px;
+            margin: 200px auto 0;
+            @media @small-tablet,@tablet{
+                width:590px;
+            }
+
+            @media @large-mobile,@mobile{
+                width:95%;
+            }
+            }
+            .upload-file{
+                border: dashed 1px @base-text-color;
+            .margin(0,0,0,0);
+            background: @secondary-background;
+            .padding(25px,25px,25px,25px);
+            @media @desktop{
+                     .padding(25px,0,25px,0);
+                }
+                @media @mobile{
+                     .padding(25px,20px,25px,20px);
+                }
+            .file-upload{
+                border-right:1px solid #9b9b9b;
+                .padding(25px,25px,25px,25px);
+                @media @tablet,@small-tablet,@large-mobile,@mobile{
+                     .padding(25px,0,25px,0);
+                }
+                @media @tablet{
+                    width:100%;
+                }
+                @media @tablet,@small-tablet,@large-mobile,@mobile{
+                     border-bottom:1px solid #9b9b9b;
+                     border-right:0;
+                }
+                img{
+                    margin-bottom:25px;
+                }
+                p{
+                    margin-bottom:0;
+                    line-height:1.63;
+                    .browse{
+                        text-decoration: underline;
+                        cursor:pointer;
+                    }
+                }
+            }
+            .drive-upload{
+                .padding(25px,25px,25px,25px);
+                .margin(0,0,0,0);
+                @media @tablet,@small-tablet,@large-mobile,@mobile{
+                     .padding(25px,0,25px,0);
+                }
+                @media @tablet{
+                    width:100%;
+                }
+                .choose-drive-label{
+                    color:@base-primary-color;
+                    margin-bottom:20px;
+                    @media @mobile{
+                        margin-bottom:20px;
+                    }
+                }
+                .dropbox{
+                    @media @mobile{
+                        .padding(0,0,0,0);
+                    }
+                    img{
+                        height:75px;
+                        width:81px;
+                    }
+                    p{
+                        font-size: 14px;
+                        font-weight:600;
+                    }
+                }
+                .gdrive{
+                    @media @mobile{
+                        .padding(0,0,0,0);
+                    }
+                    img{
+                        height:75px;
+                        width:90px;
+                    }
+                    p{
+                        font-size: 14px;
+                        font-weight:600;
+                    }
+                }
+                .credential-info{
+                   line-height: 1.5;
+                    font-size: 12px;
+                    margin-top: 50px;
+                    color: #757575;
+                }
+            }
+
+            }
+    }
+
+
+.document-status{
+    .modal-dialog{
+        width: 90%;
+        max-width:1300px;
+         margin: 100px auto 0;
+        .modal-content{
+            position: relative;
+            .upload-overlay{
+                background: rgba(255,255,255,0.5);
+                z-index: 999;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                 .upload-icon{
+                        width:25px;
+                        height:25px;
+                        display: inline-block;
+                        background-repeat: no-repeat;
+                        background-size:100% 100%;
+                        vertical-align: middle;
+                        background-image: url("@{base-url}images/loader.gif");
+
+                        position: absolute;
+                        top: 200px;
+                        left: 46%;
+                 }
+            }
+            .upload-status-modal{
+                .padding(10px,20px,20px,20px);
+                
+                .status{
+                    @media @mobile,@large-mobile,@small-tablet{
+                        text-align:left;
+                        margin-bottom:10px;
+                    }
+                    .status-icon{
+                        width:25px;
+                        height:25px;
+                        display: inline-block;
+                        background-repeat: no-repeat;
+                        background-size:100% 100%;
+                        margin-right:10px;
+                        vertical-align: middle;
+                    }
+                    .success{
+                        font-size: 14px;
+                        .success-icon{
+                            background-image: url("@{base-url}images/success.png");
+                        
+                        }
+                    }
+
+
+                    .retry{
+                        font-size: 14px;
+                        color: #a93439;
+                        .retry-icon{
+                            width: 30px;
+                            height: 24px;
+                            background-image: url("@{base-url}images/upload-error-icon.png");
+                            &.error-tooltip{
+                                position:relative;
+                                .error-tooltip-text{
+                                    visibility: hidden;
+                                    width: 200px;
+                                    background-color: @base-primary-color;
+                                    border: 1px solid @base-primary-color;
+                                    color: #fff;
+                                    font-size: 12px;
+                                    text-align: center;
+                                    border-radius: 6px;
+                                    padding: 5px 2px;
+                                    position: absolute;
+                                    z-index: 1;
+                                    top: 35px;
+                                    right: -14px;
+                                    margin-left: -60px;
+                                    @media @mobile, @large-mobile,@small-tablet{
+                                        right: auto;
+                                        left:56px;
+                                    }
+                                    &::after{
+                                        content: "";
+                                        position: absolute;
+                                        bottom: 100%;
+                                        left: 88%;
+                                        margin-left: -5px;
+                                        border-width: 5px;
+                                        border-style: solid;
+                                        border-color: transparent transparent @base-primary-color transparent;
+                                        @media @mobile, @large-mobile,@small-tablet{
+                                            left: 8%;
+                                        }
+                                    }
+                                }
+                                &:hover{
+                                    .error-tooltip-text{
+                                         visibility: visible;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .doc-uploaded{
+                    .status-info{
+
+                        &.red-text{
+                            color: @base-info-color;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .condition-selected{
+                    .condition{
+                        max-height: 400px;
+                        overflow: auto;
+                        
+                        ul{
+                            li{
+                                margin-bottom: 15px;
+                                &:last-child{
+                                    margin-bottom:0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .status-label{
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                .status-info{
+                    font-size: 16px;
+                }
+                .status-btn-div{
+                    @media @mobile,@large-mobile{
+                        text-align: center;
+                    }
+                    .file-upload-info{
+                        margin-top: 26px;
+                    }
+                    button{
+                        .padding(7px,16px,7px,16px);
+                        width:100px;
+                        height:36px;
+                        border-radius: 2px;
+                        font-size: 16px;
+                        margin-left: 15px;
+                        .add-btn{
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

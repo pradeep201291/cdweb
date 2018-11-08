@@ -1,0 +1,83 @@
+<div class="col-lg-8 col-md-7 col-sm-8 col-xs-12 message-box-wrap">
+    <div class="message-box">
+        <div class="message-header">
+            <div *ngIf="addContact" class="contact-list-wrap">
+                <div class="contact-list">
+                    <ul>
+                        <li *ngFor="let contact of contacts | filterContact: searchTerm">
+                            <div (click)="addSelectedContact(contact)">
+                                <img src="{{contact.pic_url}}" class="" />
+                                <span class="contact-info">
+                                <span class="name">{{selectedLoan.loan_num}} | {{contact.name}}</span>
+                                <span class="designation">{{contact.role}}</span>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="name-card" *ngFor="let contact of selectedContacts">
+                <img src="{{contact.pic_url}}" />
+                <p class="name-info">
+                    <span class="name">{{contact.name}}</span>
+                    <span class="designation">{{contact.role}}</span>
+                </p>
+                <span *ngIf="selectedContact === null || (selectedContact && selectedContact !== contact)" class="close-participant glyphicon glyphicon-remove"
+                    (click)="removeContact(contact)"></span>
+            </div>
+            <div *ngIf="this.contacts.length > this.selectedContacts.length" class="add-participants name-card" (click)="addRecipient()">
+                <span class="contact-icon"></span>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div (click)="addContact=false;" class="message-history-wrap">
+            <!--<h4 *ngIf="selectedContact">Conversation with <span>{{selectedContact.name}}</span></h4>
+            <h4 *ngIf="!selectedContact">All Conversations</h4>-->
+            <div class="message-history" id="message-history">
+                <div *ngIf="conversation && conversation.length > 0">
+                    <div class="row" *ngFor="let message of conversation | sortByDate;">
+                        <div class="unread-msg-wrap" *ngIf="unreadMessages && unreadMessages.length > 0 && message === firstUnreadMessage" id="unread_message">
+                            <span class="unread-msg-span" id="unread_message">{{unreadMessages.length}} unread messages</span>
+                            <hr/>
+                        </div>
+                        <div [attr.id]="'msg_'+message.message_id" class="col-lg-10 fR" [ngClass]="{'loan-applicant': message?.sent, 'loan-officer': !message?.sent}">
+                            <div class="message_wrapper fR">
+                                <img *ngIf='!message?.sent' class="avatar fL" src="{{message.pic_url}}" />
+                                <div class="text-holder">
+                                    {{message.message_text}}
+                                </div>
+
+                                <img *ngIf='message?.sent' class="avatar fL" src="@SL_APP_ROOT_PATH@assets/images/avatar_message.png" />
+                                <div *ngIf='message?.sent' class="date-time text-right">
+                                    <span class="">{{ message?.date_sent ? (message.date_sent | toLocalDate) : "-" }}</span>
+                                </div>
+                                <div *ngIf='!message?.sent' class="date-time text-left">
+                                    <span class="date">{{ message?.date_sent ? (message.date_sent | toLocalDate) : "-" }}</span>
+                                    <span class="sender-name fR" *ngIf="!message?.sent">{{message?.from_name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="message-text" (keyup.enter)="sendMessage()">
+            <textarea type="text" placeholder="Type your message here..." [(ngModel)]="message" maxlength="1000"></textarea>
+            <span class="send-btn" style="cursor:pointer" (click)="sendMessage()"></span>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="warningModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" (click)="onWarningModalClose()">&#10005;</span>
+            </div>
+            <div class="modal-body text-center">
+                <div>Select at least one recipient to send a message.</div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>

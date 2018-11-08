@@ -1,0 +1,84 @@
+<div class="security-preferences authentication-box">
+    <div class="security-preference-content">
+        <form [formGroup]="updateProfileForm" novalidate>
+
+            <div *ngIf="updateProfileEventArgs">
+                <div class="security-preference-2fa-wrap text-left">
+                    <small *ngIf="errorMessage && errorMessage !== ''" class="text-danger text-center">{{errorMessage}}</small>
+                    <div class="row row-2fa">
+                        <div class="col-xs-6">
+                            <span class="status-label">Status: </span>
+                            <span class="status-value">{{updateProfileEventArgs.TwoFactorEnabled? 'On' : 'Off'}}</span>
+                        </div>
+                        <div class="col-xs-6 text-right row-2fa">
+                            <div class="btn-group on-off-button " data-toggle="buttons">
+                                <label class="btn btn-default" [ngClass]="{'btn-2fa-on': updateProfileEventArgs.TwoFactorEnabled, 
+                                'btn-2fa-off': !updateProfileEventArgs.TwoFactorEnabled}">
+                                        <input  formControlName="twoFactorEnabled" name="twoFactorEnabled" value="true" (click)="toggleTwoFASettings(true)"  type="radio"   autocomplete="off"> 
+                                        On
+                                    </label>
+                                <label class="btn btn-default" [ngClass]="{'btn-2fa-on': !updateProfileEventArgs.TwoFactorEnabled, 
+                                'btn-2fa-off': updateProfileEventArgs.TwoFactorEnabled}">
+                                        <input formControlName="twoFactorEnabled" value="false" name="twoFactorEnabled"  (click)="toggleTwoFASettings(false)"  type="radio"    autocomplete="off">
+                                        Off
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="phone-num-wrap">
+                        <div class="phone-info" *ngIf="canShowPhoneNumber">
+                            <span class="phone-text">Phone number: </span>
+                            <span>
+                                <span class="country-code" *ngIf="hasPhoneNumber">+1</span> {{phoneNumber
+                            | phoneNumber: false}}
+                            </span>
+                            <span *ngIf="canEditPhoneNumber" (click)="editPhoneNumber()" class="number-edit fR">Edit</span>
+                        </div>
+
+                        <div class="input-div phone-input" *ngIf="canChangePhoneNumber">
+                            <input formControlName="phoneNumber" class="form-control pho-number" type="text" name="phoneNumber" />
+                            <span class="placeholder-label">Phone Number</span>
+                            <div class="text-danger errtext-align error-text" *ngIf="phoneNumberError !== ''">
+                                <label>{{phoneNumberError}}</label>
+                            </div>
+                        </div>
+
+                        <div *ngIf="canChangePhoneNumber" class="get-code-btn">
+                            <button type="button" (click)="onCancel()" class="login-button btn cancel-button fL">Cancel</button>
+                            <button type="button" (click)="getCode()" class="login-button btn primary-button fR">Get Code</button>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="verification-wrap" *ngIf="isOTPSent">
+                        <h2 class="verification-heading text-center">Verification Code Has Been Sent</h2>
+                        <p class="enter-code-label">Please enter the code that was sent to <span>{{ updateProfileForm.value.phoneNumber
+                            | phoneNumber: true }}</span></p>
+                        <div class="enter-otp input-div required">
+                            <input type="text" formControlName="otpCode" name="otpCode" class="form-control">
+                            <span class="placeholder-label">Enter Code</span>
+                            <div *ngIf="otpError" class="text-danger errtext-align error-text">
+                                <label>One time password required.</label>
+                            </div>
+                        </div>
+                        <div class=" resend-link">
+                            <button (click)="getCode()" class="login-button secondary-button btn btn-block">Re-Send Code</button>
+                        </div>
+                        <!--<p>{{otpCode.errors|json}}</p>-->
+                    </div>
+
+
+
+                </div>
+
+                <div *ngIf="canClose">
+                    <button (click)="onClose()" type="button" class="login-button secondary-button btn btn-block">Close</button>
+                </div>
+
+                <div *ngIf="canSubmit">
+                    <button type="button" (click)="onSubmit()" class="login-button btn primary-button btn-block submit-btn">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

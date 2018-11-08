@@ -1,0 +1,46 @@
+<footer class="" [ngClass]="footerClass">
+    <div class="row foot-wrap">
+        <div class="col-lg-11 fn-center foot-links ">
+            <img class="loggedIn-logo black-logo" src="@SL_APP_ROOT_PATH@assets/images/eHLLogo_blue.png" />
+            <ul>
+                <li *ngFor="let value of hyperlinkItems">
+                    <a *ngIf="value.isActive && !value.isPopup" href={{value.url}} target="_blank" class="">{{value.label}}</a>
+                    <a *ngIf="value.isActive && value.isPopup === true" href="javascript:void(0)" (click)="footerLinkClickHandler(value)" class="">{{value.label}}</a>
+
+                    <span *ngIf="!value.isActive" class="">{{value.label}}</span>
+
+                </li>
+                <li class="copyright">
+                    {{copyRightContent}}
+                </li>
+            </ul>
+        </div>
+       <div class="col-xs-11 col-sm-10 col-md-11 col-lg-11 fn-center foot-note">
+            <img class="white-logo" [src]="logosrc" />
+            <img class="black-logo" src="@SL_APP_ROOT_PATH@assets/images/EHL_logo_black.png" />
+            <p>
+                {{policyContent}}
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+<div class="eula-modal modal fade in" id="eula-modal" data-backdrop="static" data-keyboard="false" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-center">End User License Agreement </h4>
+            </div>
+            <div class="modal-body">
+                <div class="eula-body" *ngIf="eulaSrc">
+                    <!--EULA CONTENT HERE-->
+                    <iframe class="eula-frame" width="100%" height="100%" [src]="eulaSrc"></iframe>
+                </div>
+            </div>
+            <div class="modal-footer action-div">
+                <button type="button" class="btn primary-button close.BTN" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

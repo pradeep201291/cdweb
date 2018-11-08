@@ -1,0 +1,175 @@
+.dasboard-status-block{
+    .status-wrap{
+        position: relative;
+
+        .section-header{
+            label{
+                margin: 0;
+            }
+        }
+            .status-text{
+              .padding(0,0,0,15px);
+              span{
+                  font-size: 16px;
+              }
+            }
+
+            .est-date{
+                text-align: right;
+                @media @mobile,@large-mobile,@small-tablet{
+                    text-align:left;
+                }
+                span{
+                    font-size: 16px;
+                }
+            }
+
+            .status-icon-wrap{
+                width: 400px;
+                margin: 30px auto 10px;
+                clear: both;
+
+                @media @large-mobile{
+                    width: 312px;
+                }
+                @media @mobile{
+                    width: 258px;
+                }
+
+
+                    span{
+                        height: 50px;
+                        width: 50px;
+                        .padding(0,106px,0,0);
+                        position: relative;
+                        display: inline-block;
+
+                        background-repeat: no-repeat;
+                        background-position: 0px 0px,55px 21px;
+                        background-size: 50px;
+
+                        @media @large-mobile{
+                            width: 40px;
+                            background-size: 40px;
+                            .padding(0,86px,0,0);
+                            background-position: 0px 0px,45px 16px;
+                        }
+                        @media @mobile{
+                            width: 35px;
+                            background-size: 32px;
+                            .padding(0,70px,0,0);
+                            background-position: 0px 0px,37px 16px;
+                        }
+
+                        &.application{
+                            
+                            &.finished{
+                                background-image: url("@{base-url}images/underwriting_green_icon.png"),url("@{base-url}images/arrow1.png");
+                            }
+                            &.ongoing{
+                                background-image: url("@{base-url}images/underwriting_yellow_icon.png"),url("@{base-url}images/arrow1.png");
+                            }
+                            &.unfinished{
+                                background-image: url("@{base-url}images/underwriting_grey_icon.png"),url("@{base-url}images/arrow1.png");
+                            }
+                            &:after{
+                                content: "Application";
+                                font-size: 14px;
+                                position: absolute;
+                                bottom: -25px;
+                                left: -8px;
+                                line-height: normal;
+                                background: @secondary-background;
+
+                                @media @mobile{
+                                    font-size: 11px;
+                                    bottom: -5px;
+                                }
+                            }
+                        }
+
+                        &.process{
+                            
+                            &.finished{
+                                background-image: url("@{base-url}images/process_green_icon.png"),url("@{base-url}images/arrow1.png");
+                            }
+                            &.ongoing{
+                                background-image: url("@{base-url}images/process_yellow_icon.png"),url("@{base-url}images/arrow1.png");
+                            }
+                            &.unfinished{
+                                background-image: url("@{base-url}images/process_grey_icon.png"),url("@{base-url}images/arrow1.png");
+                            }
+
+                            &:after{
+                                content: "Processing";
+                                font-size: 14px;
+                                position: absolute;
+                                bottom: -25px;
+                                left: -5px;
+
+                                @media @mobile{
+                                    font-size: 11px;
+                                    bottom: -5px;
+                                }
+                            }
+                        }
+
+                        &.underwriting{
+                            
+                            &.finished{
+                                background-image: url("@{base-url}images/app_green_icon.png"),url("@{base-url}images/arrow1.png");
+                            }
+                            &.ongoing{
+                                background-image: url("@{base-url}images/app_yellow_icon.png"),url("@{base-url}images/arrow1.png");
+                            }
+                            &.unfinished{
+                                background-image: url("@{base-url}images/app_grey_icon.png"),url("@{base-url}images/arrow1.png");
+                            }
+
+                            &:after{
+                                content: "Underwriting";
+                                font-size: 14px;
+                                position: absolute;
+                                bottom: -25px;
+                                left: -14px;
+                                background: @secondary-background;
+
+                                @media @mobile{
+                                    font-size: 11px;
+                                    bottom: -5px;
+                                }
+                            }
+                        }
+                        
+                        &.completed{
+                            .padding(0,0,0,0);
+
+                            &.finished{
+                                background-image: url("@{base-url}images/completed_green_icon.png");
+                            }
+                            &.ongoing{
+                                background-image: url("@{base-url}images/completed_yellow_icon.png");
+                            }
+                            &.unfinished{
+                                background-image: url("@{base-url}images/completed_grey_icon.png");
+                            }
+
+                            &:after{
+                                content: "Completed";
+                                font-size: 14px;
+                                position: absolute;
+                                bottom: -25px;
+                                left: -7px;
+
+                                @media @mobile{
+                                    font-size: 11px;
+                                    bottom: -5px;
+                                }
+                            }
+                        }
+                    }
+                    
+            }
+           
+        }
+}

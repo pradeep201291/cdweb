@@ -1,0 +1,69 @@
+<div class="loan-details-content row">
+	
+	<div class="col-sm-4 col-xs-6 loan-element primary-element">
+		<p class="loan-label">{{resource.note_loan_amt}}</p>
+		<p class="loan-value" *ngIf="loanDetails.note_loan_amt"> {{loanDetails.note_loan_amt | currency: 'USD':true}}</p>
+		<p class="loan-value" *ngIf="!loanDetails.note_loan_amt"> N/A</p>
+	</div>
+	<div class="col-sm-4 col-xs-6 loan-element primary-element">
+		<p class="loan-label">{{resource.rate}}</p>
+		<p class="loan-value" *ngIf="loanDetails.rate">{{loanDetails.rate}}%</p>
+		<p class="loan-value" *ngIf="!loanDetails.rate">N/A</p>
+	</div>
+	<div class=" col-sm-4 col-xs-6 loan-element primary-element">
+		<p class="loan-label">{{resource.apr}}</p>
+		<p class="loan-value" *ngIf="loanDetails.apr">{{loanDetails.apr}}%</p>
+		<p class="loan-value" *ngIf="!loanDetails.apr">N/A</p>
+	</div>
+
+	<div class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.loan_term}}</p>
+		<p class="loan-value" *ngIf="loanDetails.loan_term">{{loanDetails.loan_term /12}} years</p>
+		<p class="loan-value" *ngIf="!loanDetails.loan_term">N/A</p>
+	</div>
+	<div class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.purchase_price}}</p>
+		<p class="loan-value" *ngIf="loanDetails.purchase_price">{{loanDetails.purchase_price | currency: 'USD':true}}</p>
+		<p class="loan-value" *ngIf="!loanDetails.purchase_price">N/A</p>
+	</div>
+	<div  class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.lock_date}}</p>
+		<p *ngIf="loanDetails.lock_date" class="loan-value">{{loanDetails?.lock_date | date}}</p>
+		<p *ngIf="!loanDetails.lock_date" class="loan-value">TBD</p>
+	</div>	
+	 <div class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.amort_type}}</p>
+		<p class="loan-value" *ngIf="loanDetails.loan_type_desc">{{loanDetails.loan_type_desc}}</p>
+		<p class="loan-value" *ngIf="!loanDetails.loan_type_desc">N/A</p>
+	</div>
+	<div class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.appraised_value}}</p>
+		<p class="loan-value" *ngIf="loanDetails.appraised_value">{{loanDetails.appraised_value | currency: 'USD':true}}</p>
+		<p class="loan-value" *ngIf="!loanDetails.appraised_value">N/A</p>
+	</div>
+	<div class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.lock_exp_date}}</p>
+		<p *ngIf="loanDetails.lock_exp_date" class="loan-value">{{loanDetails?.lock_exp_date | date}}</p>
+		<p *ngIf="!loanDetails.lock_exp_date" class="loan-value">TBD</p>
+	</div>
+	<div class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.product}}</p>
+		<p class="loan-value" *ngIf="loanDetails.amort_type_desc">{{loanDetails?.amort_type_desc}}</p>
+		<p class="loan-value" *ngIf="!loanDetails.amort_type_desc">N/A</p>
+	</div>
+	<div class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.ltv}}</p>
+		<p *ngIf= "loanDetails.ltv" class="loan-value">{{loanDetails.ltv}}%</p>
+		<p *ngIf= "!loanDetails.ltv" class="loan-value">N/A</p>
+	</div>
+	<div class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.lock_period}}</p>
+		<p class="loan-value" *ngIf="loanDetails.lock_period">{{loanDetails.lock_period}} Days</p>
+		<p class="loan-value" *ngIf="!loanDetails.lock_period">N/A</p>
+	</div>
+	<div class="col-sm-4 col-xs-6 loan-element">
+		<p class="loan-label">{{resource.loan_purpose}}</p>
+		<p class="loan-value" *ngIf="loanDetails.loan_purpose">{{loanDetails.loan_purpose}}</p>
+		<p class="loan-value" *ngIf="!loanDetails.loan_purpose">N/A</p>
+	</div>	
+</div>

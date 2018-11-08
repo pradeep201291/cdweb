@@ -1,0 +1,16 @@
+<div class="input-wrap">
+  <div class="question-wrap">
+    <p>Have you identified the property that you are interested in ?</p>
+  </div>
+
+  <div class="input-wrap ">
+    <form novalidate [formGroup]="propertyIdentificationForm">
+      <input type="radio" id="noProperty" formControlName="propertyIdentified" class="customRadio" value="no" />
+      <label for="noProperty" class="">No</label>
+
+      <input type="radio" id="hasProperty" formControlName="propertyIdentified" class="customRadio" value="yes" />
+      <label for="hasProperty" class="">Yes</label>
+    </form>
+  </div>
+  <a href="javascript:void();">Skip Property</a>
+</div>

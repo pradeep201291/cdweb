@@ -1,0 +1,23 @@
+<div class="loan-details-content row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 loan-element">
+		<p class="loan-label">{{resource.discl_sent_date}}</p>
+		<p *ngIf="loanDetails?.discl_sent_date" class="loan-value">{{loanDetails?.discl_sent_date | date}}</p>
+		<p *ngIf="!loanDetails?.discl_sent_date" class="loan-value">TBD</p>
+	</div>
+	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 loan-element">
+		<p class="loan-label">{{resource.appr_recv_date}}</p>
+		<p *ngIf="loanDetails?.appraisal_date" class="loan-value">{{loanDetails?.appraisal_date | date}}</p>
+		<p *ngIf="!loanDetails?.appraisal_date" class="loan-value">TBD</p>
+	</div>
+	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 loan-element">
+		<p class="loan-label">{{resource.final_approval_date}}</p>
+		<p *ngIf="loanDetails?.final_approval_date" class="loan-value">{{loanDetails?.final_approval_date | date }}</p>
+		<p *ngIf="!loanDetails?.final_approval_date" class="loan-value">TBD</p>
+	</div>
+
+	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 loan-element">
+		<p class="loan-label">{{resource.closing_discl_date}}</p>
+		<p *ngIf="loanDetails?.closing_discl_date" class="loan-value">{{loanDetails?.closing_discl_date | date}}</p>
+		<p *ngIf="!loanDetails?.closing_discl_date" class="loan-value">TBD</p>
+	</div>
+</div>

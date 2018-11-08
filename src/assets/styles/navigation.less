@@ -1,0 +1,191 @@
+.left-nav{
+    z-index: 999999;
+    float:left;
+    position: fixed;
+    height: 100%;
+    background: @nav-bg-color;
+    left: -300px;
+    width: 300px;
+
+    .profile{
+        .profile-pic{
+            background: #fff;
+            height: 75px;
+            width: 75px;
+            border-radius: 50%;
+            .margin(0,0,10px,0);
+        }
+        .profile-name{
+            color: #fff;
+        }
+    }
+
+    .menu-loan-selector{
+      width: 100%;
+      .padding(0,0,0,0);
+      .loan-details{
+        .loan-number,.loan-address{
+          display: inline-block;
+          width: 100%;
+          color: @secondary-text-color;
+        }
+        .loan-address{
+          font-size: 12px;
+        }
+      }
+      .multiselect-button{
+        background: @nav-bg-color;
+        border: 0;
+        position: relative;
+        height: auto;
+        .padding(5px,25px,5px,10px);
+        &:focus{
+          outline: 0;
+        }
+        .select-icon{
+          color: @secondary-text-color;
+          position: absolute;
+          right: 15px;
+          top: 20px;
+          font-size: 10px;
+
+        }
+      }
+      .select-menu{
+        background: @nav-bg-color;
+        border: 0;
+        left: 0;
+        right: 0;
+        display: none;
+        &:hover{
+          display: block;
+        }
+        li{
+          &:hover{
+            background: @nav-bg-hover-color;
+          }
+        }
+      }
+      &:hover{
+        .multiselect-button{
+          background: @nav-bg-hover-color;
+        }
+        .select-menu{
+          display: block;
+        }
+      }
+    }
+
+    ul{
+       position:relative;
+       width:300px;
+       .padding(25px,0,0,0);
+       @media only screen and (max-height: 450px){
+         .padding(15px,0,0,0);
+       }
+       
+         li{
+           .padding(10px,10px,10px,75px);
+           cursor: pointer;
+           background-repeat: no-repeat;
+           background-position:25px center;
+           
+           span{
+             display: inline-block;
+             a{
+                font-size: 14px;
+              }
+             sup{
+                    position: absolute;
+                    display: block;
+                    top: 8px;
+                    left: 53px;
+                    border: 1px solid #6ab550;
+                    height: 20px;
+                    width: 20px;
+                    line-height: 20px;
+                    border-radius: 10px;
+                    background: #6ab550;
+                    color: @secondary-text-color;
+             }
+           }
+
+           
+           &:hover{
+              background-color: @nav-bg-hover-color;
+              a{
+                color:@secondary-text-color;
+                }
+           }
+           &.active{
+              background-color: @nav-bg-hover-color;
+              a{
+                color:@secondary-text-color;
+                }
+           }
+
+           &.summary{
+             background-image: url("@{base-url}images/menu-summary.png");
+           }
+           &.dashboard{
+             background-image: url("@{base-url}images/menu-dashboard.png");
+           }
+           &.loan-detail{
+             background-image: url("@{base-url}images/menu-loan-details.png");
+           }
+           &.documents{
+             background-image: url("@{base-url}images/menu-documents.png");
+           }
+           &.contacts{
+             background-image: url("@{base-url}images/menu-contact.png");
+           }
+           &.notification-mob{
+             background-image: url("@{base-url}images/menu-notification.png");
+           }
+           &.message-mob{
+             background-image: url("@{base-url}images/menu-message.png");
+           }
+           &.logout{
+             background-image: url("@{base-url}images/logout.png");
+           }
+           
+
+           &.nav-section{
+              .padding(0,0,0,0);
+              &:hover{
+                background-color: @nav-bg-color;
+              }
+              ul{
+                padding-top: 0px;
+                li{
+                 .padding(10px,10px,10px,75px);
+                }
+              }
+
+              &.mob-nav-list{
+                display: none;
+                @media @mobile{
+                  display: block;
+                }
+              }
+              &.settings-links,&.policy-links{
+                // border-top: 1px solid @secondary-text-color;
+              }
+              &.policy-links{
+                display: none;
+                @media @mobile{
+                  display: block;
+                }
+                ul{
+                  li{
+                    .padding(10px,10px,10px,25px);
+                  }
+                }
+              }
+           }
+         }
+         hr{
+           margin: 10px 25px;
+         }
+    }
+}

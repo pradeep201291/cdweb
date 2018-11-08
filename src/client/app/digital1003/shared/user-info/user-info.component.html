@@ -1,0 +1,55 @@
+<div class="input-wrap">
+    <form [formGroup]="userInfoForm" novalidate>
+        <div class="row">
+            <div class="input-field col-sm-6">
+                <div class="form-group input-div">
+                    <input type="text" class="form-control" formControlName="firstName" autofocus required>
+                    <span class="placeholder-label">First Name</span>
+                </div>
+                <div *ngIf="userInfoForErrors.firstName" class="error-text text-left">
+                    <span>{{userInfoForErrors.firstName}}</span>
+                </div>
+            </div>
+
+            <div class="input-field  col-sm-6">
+                <div class="form-group input-div">
+                    <input type="text" class="form-control" formControlName="middleName" autofocus required>
+                    <span class="placeholder-label">Middle Name</span>
+                </div>
+                <!--<div class="error-text text-left">
+                    <span>error msg here</span>
+                </div>-->
+            </div>
+
+            <div class="input-field  col-sm-6">
+                <div class="form-group input-div">
+                    <input type="text" class="form-control" formControlName="lastName" autofocus required>
+                    <span class="placeholder-label">Last Name</span>
+                </div>
+                <div *ngIf="userInfoForErrors.lastName" class="error-text text-left">
+                    <span>{{userInfoForErrors.lastName}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col-sm-6">
+                <div class="form-group input-div">
+                    <input type="text" class="form-control" formControlName="mobileNumber" autofocus required>
+                    <span class="placeholder-label">Cell Phone Number</span>
+                </div>
+                <div *ngIf="userInfoForErrors.mobileNumber" class="error-text text-left">
+                    <span>{{userInfoForErrors.mobileNumber}}</span>
+                </div>
+            </div>
+            <div class="input-field  col-sm-6">
+                <div class="form-group input-div">
+                    <input type="text" class="form-control" formControlName="email" autofocus required>
+                    <span class="placeholder-label">Email Address</span>
+                </div>
+                <div *ngIf="userInfoForErrors.email" class="error-text text-left">
+                    <span>{{userInfoForErrors.email}}</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+<div class="container-fluid forgot-password-body authentication-wrap">
+    <h1 class="login-heading device-reg-heading text-center">
+        <span class="exclamation-sign"></span> Sorry Device Not Recognized!
+    </h1>
+    <div class="forgot-password-box authentication-box">
+        <form [formGroup]="unknownDeviceForm" novalidate (ngSubmit)="onSubmit()">
+            <div class="enter-code-wrap">
+                <p class="enter-code-label">
+                    Please enter the code that was sent to {{authCallBackEventArgs?.maskedPhoneNumber}}
+                </p>
+                <div class="form-group enter-code input-div">
+                    <input type="text" formControlName="otpCode" class="form-control col-sm-8 col-lg-7" autocomplete="off" required>
+                    <span class="placeholder-label">Enter Code</span>
+                    <div *ngIf="unknownDeviceFormErrors.otpCode !== ''" class="text-danger errtext-align error-text">
+                        <label>{{unknownDeviceFormErrors.otpCode}}</label>
+                    </div>
+                </div>
+                <div class="resend-code-btn">
+                    <button type="button" (click)="sendOTPCode()" class="login-button cancel-button btn btn-block">Re-Send Code</button>
+                </div>
+                <div class="remember-device-div">
+                    <input type="checkbox" formControlName="rememberMe" id="remember-device" />
+                    <label for="remember-device" class="custom-checkbox"></label>
+                    <label for="remember-device" class="remember-device-label">Remember This Device</label>
+                </div>
+            </div>
+            <div class="submit-btn-wrap">
+                <button type="submit" class="login-button primary-button submit-btn btn-block">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>

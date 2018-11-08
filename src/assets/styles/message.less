@@ -1,0 +1,472 @@
+.main-content{
+    .message-page-wrap{
+        .message-page{
+            .message-cards{
+                .padding(0,0,0,15px);
+                @media @tablet{
+                    width:100%;
+                }
+                @media @tablet,@small-tablet,@large-mobile,@mobile{
+                    .padding(0,15px,0,15px);
+                }
+                .loan-card-wrap{
+                    &.view-all-conv{
+                        .loan-card{
+                            line-height:85px;
+                            cursor: pointer;
+                            .padding(0,0,0,30px);
+                             color: #5f5f5f;
+                             font-size:18px;
+                        }
+                    }
+                    .loan-card{
+                        font-family: Lato-Semibold, sans-serif;
+                        position: relative;
+                        border:1px solid @border-secondary-color;
+                        border-right: 0;
+                        border-bottom:0;
+                        min-height :85px;
+                        font-size:14px;
+                        .padding(15px,15px,15px,15px);
+                        background: @secondary-background;
+                        color:@base-primary-color;
+                        border-radius: 2px;
+                        p{
+                            color:@base-primary-color;
+                            margin:0;
+                        }
+                        .card-pic-wrap{
+                            width:55px;
+                            height:40px;
+                            padding-right:15px;
+                            @media @mobile{
+                                width:18%;
+                            }
+
+                            img{
+                                width:100%;
+                                border-radius: 50%;
+                                border: 1px solid @border-secondary-color;
+                                background: @secondary-background;
+                            }
+                        }
+
+                        .card-contact-info{
+                            .padding(5px,0,5px,0);
+                            width:70%;
+                            @media @mobile{
+                                font-size: 14px;
+                                width:82%;
+                            }
+                            p{
+                                
+                            }
+                            .contact-name{
+                            
+
+                                .loan-num{
+                                }
+                                .loan-name{
+                                }
+                            }
+                            .contact-role{
+                            }
+                        }
+                        .message-notification{
+                            text-align:right;
+                            .padding(0,20px,0,0);
+                            line-height:65px;
+                            position: absolute;
+                            right:0px;
+                            top:20px;
+                            @media @mobile{
+                                .padding(0,20px,0,0);
+                            }
+                            .notification-count{
+                                .padding(5px,10px,5px,10px);
+                                width:28px;
+                                height:28px;
+                                border-radius:50%;
+                                background:#1eb9bd;
+                                color:#fff;
+                            }
+                        }
+
+                        &.loan-card-active{
+                            background-color: @message-background;
+                        }
+                        
+                    }
+                    &:last-child{
+                        border-bottom: 1px solid @border-secondary-color;
+                    }
+                }
+            }
+
+            .message-box-wrap{
+                .padding(0,15px,0,0);
+                @media @tablet{
+                    width:100%;
+                }
+                @media @tablet,@small-tablet,@large-mobile,@mobile{
+                    .padding(0,15px,0,15px);
+                }
+                .message-box{
+                    border:1px solid @border-secondary-color;
+                    border-radius:4px;
+                    background-color: #fff;
+                    position:relative;
+                    .message-header{
+                        .padding(15px,15px,15px,15px);
+                        background:#fff;
+                        position: relative;
+                        .margin(0,0,15px,0);
+                        border-bottom:1px solid  @border-secondary-color;
+                        @media @mobile{
+                            .padding(10px,10px,10px,10px);
+                        }
+                        
+                        .name-card{
+                            min-width:195px;
+                            border: solid 1px @border-secondary-color;
+                            background:#fff;
+                            font-size: 14px;
+                            font-weight: 600;
+                            float:left;
+                            line-height:38px;
+                            border-radius:2px;
+                            .padding(5px,10px,5px,10px);
+                            .margin(5px,5px,5px,5px);
+                            @media @mobile{
+                                width:100%;
+                                .margin(0px,0px,5px,0px);
+                            }
+                            img{
+                                float:left;
+                                width:40px;
+                                height:40px;
+                                .margin(2px,8px,2px,2px);
+                                border-radius: 50%;
+                                border: 1px solid @border-secondary-color;
+                            }
+                            .name-info{
+                                display: inline-block;
+                                line-height:2;
+                                .name,.designation{
+                                    .margin(0px,8px,0px,2px);
+                                }
+                                .designation{
+                                    display: block;
+                                    line-height:1;
+                                    font-weight:normal;
+                                }
+                            }
+                            .close-participant{
+                                float:right;
+                                .margin(5px,0px,0px,15px);
+                                color: #666;
+                                cursor:pointer;
+                                line-height:39px;
+                                font-size: 14px;
+                            }
+                        }
+                        .add-participants{
+                            background: none;
+                            min-width:0;
+                            cursor: pointer;
+                            line-height: 1;
+                            border:0;
+                            float:right;
+                            .padding(10px,10px,10px,10px);
+                            @media @mobile{
+                                text-align: right;
+                            }
+                            .contact-icon{
+                                background-image: url("@{base-url}images/Add_user.png");
+                                display: inline-block;
+                                width:28px;
+                                height:20px;
+                                background-size: 100% 100%;
+                                vertical-align:bottom;
+                            }
+                        }
+                        .contact-list-wrap{
+                            position:absolute;
+                            top:110px;
+                            right:20px;
+                            cursor: pointer;
+                            z-index:9999;
+                            box-shadow:0 0 5px rgba(0,0,0,.25);
+                            width:380px;
+                            background: #fff;
+                            .padding(15px,15px,15px,15px);
+                            @media @mobile{
+                                right:10px;
+                                left:10px;
+                                width: auto;
+                                top:0;
+                            }
+
+                                .contact-search-box{
+                                    position: relative;
+                                    input{
+                                        width:100%;
+                                        .padding(5px,5px,5px,5px);
+                                        height: 35px;
+                                        border-radius: 2px;
+                                        font-size:14px;
+                                        border: solid 1px #8c9caf;
+                                    }
+                                    .search-icon{
+                                        width: 15px;
+                                        height: 15px;
+                                        display: inline-block;
+                                        position: absolute;
+                                        top: 10px;
+                                        right: 5px;
+                                        background-image: url("@{base-url}images/search-icon.png");
+                                        background-repeat: no-repeat;
+                                        background-size: 100% 100%;
+
+                                    }
+                                }
+                                .contact-list{
+                                    color:#444;
+                                    ul{
+                                        li{
+                                            .padding(15px,15px,15px,15px);
+                                            .margin(15px,0,15px,0);
+                                            min-height: 60px;
+                                            border-radius: 2px;
+                                            background-color: @message-background;
+                                            img{
+                                                float:left;
+                                                width:40px;
+                                                height:40px;
+                                                border-radius: 50%;
+                                                border: 1px solid @border-secondary-color;
+                                                background: @secondary-background
+                                            }
+                                            .contact-info{
+                                                display: inline-block;
+                                                width: 85%;
+                                                padding-left: 20px;
+                                                @media @mobile{
+                                                    width: 75%;
+                                                }
+                                                .name,.designation{
+                                                    display: inline-block;
+                                                }
+                                                .name{
+                                                    .margin(3px,0,3px,0);
+                                                    font-size: 14px
+                                                }
+                                                .designation{
+                                                    font-size: 12px;
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                    }
+
+                    .message-history-wrap{
+                            .padding(0,15px,0,15px);
+                        .message-history{
+                            .padding(25px,25px,25px,15px);
+                            height:500px;
+                            overflow-y:auto;
+                            .message_wrapper{
+                                    .date-time{
+                                        color: @base-primary-color;
+                                        font-size:12px;
+                                        .margin(10px,0,0,0);
+                                        clear: both;
+
+                                        &.text-left{
+                                            .margin(10px,0,0,60px);
+                                            
+                                            .sender-name{
+                                                @media @mobile{
+                                                    float: left;
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+                                        &.text-right{
+                                            .margin(10px,60px,0,0);
+                                        }
+                                    }
+                                    .text-holder{
+                                        background-color: #e9e9e9;
+                                        min-height: 42px;
+                                        width:490px;
+                                        position:relative;
+                                        float: right;
+                                        border-radius: 2px;
+                                        font-size: 14px;
+                                        .padding(10px,10px,10px,10px);
+                                        .margin(0,0,5px,0);
+                                        word-wrap: break-word;
+                                        @media @large-desktop{
+                                            width:400px;
+                                        }
+                                        @media @desktop{
+                                            width:350px;
+                                        }
+                                        @media @small-tablet{
+                                            width:400px;
+                                        }
+                                        @media @large-mobile{
+                                            width:280px;
+                                        }
+                                        @media @mobile{
+                                            width:160px;
+                                        }
+                                        &::after{
+                                            content: "";
+                                            position: absolute;
+                                            margin-left: -5px;
+                                            border-width: 7px;
+                                            border-style: solid;
+                                        }
+                                    }
+                                    .avatar{
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius:50%;
+                                    border: 1px solid @border-secondary-color;
+                                }
+                                }
+                                .unread-msg-wrap{
+                                        position: relative;
+                                        span.unread-msg-span{
+                                            position: absolute;
+                                            top: -11px;
+                                            left: 43%;
+                                            background: #fff;
+                                        }
+                                }
+                            .loan-applicant{
+                                overflow:hidden;
+                                .margin(0,0,20px,0);
+                                .padding(0,0,0,0);
+                                .message_wrapper{
+                                    .text-holder{
+                                        background-color: @message-secondary-background;
+                                        float:left;
+                                        color:#fff;
+                                        &:after{
+                                            top:14px;
+                                            right:-12px;
+                                            border-color: transparent transparent transparent @message-secondary-background ;
+                                        }
+                                    }
+                                }
+                                .avatar{
+                                    .margin(0,0,0,20px);
+                                    float:right !important;
+                                }
+                            }
+
+                            .loan-officer{
+                                overflow:hidden;
+                                .margin(0,0,20px,0);
+                                .padding(0,0,0,0);
+                                .message_wrapper{
+                                    margin-right:60px;
+                                    @media @mobile{
+                                        margin-right:20px;
+                                    }
+                                    .text-holder{
+                                        background-color: #e9e9e9;
+                                        color:#000;
+                                         float:left;
+                                         &:after{
+                                             top: 14px;
+                                             left: -8px;
+                                             border-color: transparent #e9e9e9 transparent transparent ;
+                                         }
+                                    }
+                                }
+                                .avatar{
+                                    .margin(0,20px,0,0);
+                                }
+                            }
+                        }
+                    }
+
+                    .message-text{
+                        .padding(20px,60px,20px,20px);
+                        background-color: #e9e9e9;
+                        .margin(20px,0,0,0);
+                        position:relative;
+                        border-top:1px solid @border-secondary-color;
+
+                        textarea{
+                            width:100%;
+                            border-radius: 2px;
+                            background-color: #ffffff;
+                            border: solid 1px @border-secondary-color;
+                            .padding(10px,10px,10px,10px);
+                            font-size:14px;
+                            resize:none;
+                            height:42px;
+                        }
+                        .send-btn{
+                            display: inline-block;
+                            width:25px;
+                            height:25px;
+                            background-image:url("@{base-url}images/send-blue.png");
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            position: absolute;
+                            right:20px;
+                            top:33%;
+                            &.disabled{
+                                background-image:url("@{base-url}images/send-grey.png");
+                                cursor: no-drop;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .no-contacts{
+         font-weight: 600;
+     }
+}
+#warningModal{
+    .modal-dialog{
+         background: @secondary-background;
+         margin: 400px auto 0;
+         width:415px;
+         @media @small-tablet,@large-mobile,@mobile{
+            margin: 200px auto 0;
+            width: 90%;
+            font-size: 12px;
+         }
+        .modal-content{
+            height:100%;
+            border-radius: 2px;
+            font-weight: 600;
+            .modal-header{
+                border:0;
+             .padding(10px,10px,0,0);
+             .close{
+                 font-size:16px;
+                 color: #666;
+                 opacity: 1;
+             }
+        }
+        .modal-footer{
+            border: 0;
+        }
+        }
+    }
+}
+
+

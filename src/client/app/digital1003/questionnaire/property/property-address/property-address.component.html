@@ -1,0 +1,72 @@
+<div class="input-wrap">
+  <div class="question-wrap">
+    <p>What is the property address ?</p>
+  </div>
+  <form>
+    <div class="row">
+      <div class="input-field col-sm-6">
+        <div class="form-group input-div">
+          <input type="text" class="form-control" autofocus required>
+          <span class="placeholder-label">Street</span>
+        </div>
+        <div class="error-text text-left hideMe">
+          <span>error msg here</span>
+        </div>
+      </div>
+
+      <div class="input-field  col-sm-6">
+        <div class="form-group input-div">
+          <input type="text" class="form-control" required>
+          <span class="placeholder-label">(Optional) Unit/Apt</span>
+        </div>
+        <div class="error-text text-left hideMe">
+          <span>error msg here</span>
+        </div>
+      </div>
+
+      <div class="input-field  col-sm-6">
+        <div class="form-group input-div">
+          <input type="text" class="form-control" required>
+          <span class="placeholder-label">Zip</span>
+        </div>
+        <div class="error-text text-left hideMe">
+          <span>error msg here</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field  col-sm-6">
+        <div class="form-group input-div">
+          <input type="text" class="form-control" required>
+          <span class="placeholder-label">City</span>
+        </div>
+        <div class="error-text text-left hideMe">
+          <span>error msg here</span>
+        </div>
+      </div>
+      <div class="input-field  col-sm-6">
+        <!--<div class="form-group input-div">
+                       <input type="text" class="form-control" required>
+                       <span class="placeholder-label">State</span>
+                    </div>-->
+        <div class="multi-select state-select">
+          <button class="multiselect-button">
+                           <span>State</span>
+                           <span class="glyphicon glyphicon-menu-down select-icon fR"></span>
+                        </button>
+          <ul class="select-menu text-left hideMe">
+            <li>CA</li>
+            <li>GS</li>
+            <li>MI</li>
+          </ul>
+        </div>
+        <div class="error-text text-left hideMe">
+          <span>error msg here</span>
+        </div>
+      </div>
+    </div>
+    <div class="button-wrap">
+      <button type="button" class="primary-button"> Continue </button>
+    </div>
+  </form>
+</div>

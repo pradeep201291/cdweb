@@ -1,0 +1,154 @@
+<sl-loan-actionbar (onLoanSelected)="onLoanSelected($event)"> </sl-loan-actionbar>
+
+<div class="main-content">
+
+  <div class="loan-details">
+
+    <div class="carousel-wrap">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <!-- Indicators -->
+        <ol class="carousel-indicators" *ngIf="taskList.length > 1">
+          <li data-target="#myCarousel" (click)="goTo(i)" *ngFor="let task of taskList; let i = index;" [ngClass]="{active: selectedIndex === i}"
+            [attr.data-slide-to]="i"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner hideMe" role="listbox">
+          <div class="item" [ngClass]="{active: i == 0}" *ngFor="let taskInfo of taskList; let i = index;">
+            <div class="row loan-details-wrap">
+              <div class="text-header text-center summary-header">
+                <h2>Summary
+                </h2>
+              </div>
+
+            </div>
+            <div class="text-header text-center">
+              <h2><strong>Welcome<span>  {{userName}}</span>,</strong> <span class="help-text">{{tag_line}}<span *ngIf="hasTrademark" class="registration">&#174;</span></span>
+              </h2>
+            </div>
+            <sl-summary-esign-document *ngIf="taskInfo.type === 0" [taskInfo]="taskInfo"></sl-summary-esign-document>
+            <upload-summary-view *ngIf="taskInfo.type === 1 && selectedLoan" [selectedLoan]="selectedLoan"></upload-summary-view>
+            <sl-summary-no-pending-item *ngIf="taskInfo.type === 2"></sl-summary-no-pending-item>
+            <sl-asset-verification *ngIf="taskInfo?.type === 3 && taskInfo?.status === 'Open'" [taskInfo]="taskInfo" [selectedLoan]="selectedLoan">
+            </sl-asset-verification>
+
+          </div>
+
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" (click)="navigate('prev')" role="button">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" (click)="navigate('next')" role="button">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="carousel-inner" role="listbox">
+          <!-- digital form progress -->
+          <div class="item active">
+            <div class="row loan-details-wrap">
+              <div class="text-header text-center summary-header">
+                <h2>Summary
+                </h2>
+              </div>
+
+            </div>
+            <sl-question-progress></sl-question-progress>
+          </div>
+          <!-- digital form progress -->
+          <div class="item ">
+            <div class="row loan-details-wrap">
+              <div class="text-header text-center summary-header">
+                <h2>Summary
+                </h2>
+              </div>
+
+            </div>
+            <sl-loan-option></sl-loan-option>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class=" text-center contact-details ">
+    <p class="assistance-text">{{text}}</p>
+    <ul *ngIf="currentLoan">
+      <li class="contact-name"><span>{{currentLoan?.contact?.name}}</span>, Loan Officer</li>
+      <li class="phone-icon">
+        <a href="javascript:void(0)">
+          <span class="icon-span"></span><span *ngIf="currentLoan?.contact?.phone">{{currentLoan?.contact?.phone}}</span>
+          <span *ngIf="!currentLoan?.contact?.phone">NA</span>
+        </a>
+      </li>
+      <li class="message-icon" (click)="goToMessage(currentLoan?.contact?.name)">
+        <a href="javascript:void(0)">
+          <span class="icon-span"></span> <span>Message</span>
+        </a>
+      </li>
+      <li class="email-icon" (click)="sendMail()">
+        <a href="javascript:void(0)">
+          <span class="icon-span"></span> <span>Email</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="esignDoc" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Esign</h2>
+
+        <span class="close" (click)="onEsignModalClose()">&#10005;</span>
+      </div>
+      <div class="modal-body text-center">
+        <iframe *ngIf="trustedEsignUrl && !esignAccessToken" [src]="trustedEsignUrl" style="width:100%;height:96%" frameborder="0"></iframe>
+        <iframe *ngIf="esignAccessToken" id="sso_form" name="sso_form" [src]="trustedEsignUrl" style="width:100%;height:100%" frameborder="0"></iframe>
+        <div *ngIf="esignAccessToken">
+          <form id="token" method="POST" target="sso_form" [action]="trustedEsignUrl">
+            <input type="hidden" name="access_token" [value]="esignAccessToken">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Form Free Modal -->
+<div class="modal fade" id="assetFormModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>User Account Verification</h2>
+        <span class="close" (click)="formWidgetModalClose()">&#10005;</span>
+      </div>
+      <div class="modal-body text-center">
+        <div *ngIf="formWidgetData">
+          <!--<div *ngIf="formWidgetData.widget" [innerHTML]="formWidgetData.widget"></div>-->
+          <div *ngIf="!formWidgetData.widget && formWidgetData.GetEnrollmentWidgetResult">No form to display.</div>
+          <div *ngIf="!formWidgetData.widget && !formWidgetData.GetEnrollmentWidgetResult">{{formWidgetData.errorMessage}}</div>
+        </div>
+        <div *ngIf="!formWidgetData">No form to display.</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+.loan-selector-wrap{
+            .address-wrap{
+                  .padding(0,0,0,0);
+                @media @small-tablet,@large-mobile,@mobile{
+                  .padding(10px,0,10px,0);
+                  border-bottom: 1px solid #ccc;
+                }
+            
+                .loan-no{
+                  font-size: 20px;
+                  font-weight: normal;
+                  display: inline-block;
+                  margin: 0;
+                  line-height: 1;
+                }
+              .multi-select{
+                  .padding(0,15px,0,5px);
+                  .multiselect-button{
+                    font-family: Lato-Regular, sans-serif;
+                      border:0;
+                      outline: 0;
+                      border-radius: 0;
+                      .padding(0,0,0,0);
+                      height:auto;
+                      background: transparent;
+                      color: @base-text-color;
+                      font-size: 20px;
+                      font-weight: 600;
+                      &:active{
+                        outline:0;
+                        border: 0;
+                      }
+
+                      .select-icon{
+                        font-size: 9px;
+                        display: inline-block;
+                        .padding(8px,0,0,5px);
+                        @media @small-tablet, @tablet{
+                          .padding(10px,0,0,7px);
+                        }
+                        @media @mobile, @large-mobile{
+                          font-size: 10px;
+                          .padding(5px,0,0,7px);
+                        }
+                      }
+                  }
+                  
+                  .select-menu{
+                    left: -2px;
+                    right: 0;
+                    top: 25px;
+                    font-weight: 600;
+                    border: 1px solid @border-secondary-color;
+                    @media @tablet,@small-tablet{
+                      top:30px;
+                    }
+                    @media @mobile,@large-mobile{
+                      top:25px;
+                    }
+                  }
+              }
+              .single-loan-num{
+                line-height: 1;
+                font-family: Lato-Regular, sans-serif;
+                font-size: 20px;
+                font-weight: 600;
+                display: inline-block;
+                margin: 0;
+                @media @tablet,@small-tablet, @large-mobile,@mobile{
+                  font-size: 18px;
+                }
+              }
+              .address{
+                  font-size: 14px;
+                  display: block;
+                  .margin(8px,0,0,0);
+              }
+            }
+            
+            .stat-wrap{
+              color: @base-text-color;
+              border:0;
+              .padding(0,0,0,0);
+              @media @small-tablet,@large-mobile,@mobile{
+               .padding(10px,0,10px,0);
+              }
+
+              .loan-status{
+                line-height: 1;
+                color: @base-text-color;
+                float: right;
+                font-size: 20px;
+                font-weight: normal;
+                
+                @media @tablet,@small-tablet, @large-mobile,@mobile{
+                  font-size: 18px;
+                }
+                @media @small-tablet{
+                  float: left;
+                }
+                @media @large-mobile,@mobile{
+                  float: left;
+                }
+                .status-value{
+                  font-weight: 600;
+                }
+              }
+              .closing-date{
+                float: right;
+                font-size: 14px;
+                margin-top: 4px;
+                clear: both;
+                @media @small-tablet{
+                  float: left;
+                }
+                @media @large-mobile,@mobile{
+                  float: left;
+                }
+              }
+              }
+          }
+        

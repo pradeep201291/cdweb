@@ -1,0 +1,83 @@
+  .status-header-wrap{
+            background: @secondary-background;
+            position: fixed;
+            top: 89px;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            box-shadow: 0px 2px 5px #ccc;
+            @media @mobile, @large-mobile{
+                top: 75px;
+            }
+            .status-header{
+                max-width: 1320px;
+                margin: 0 auto;
+                .padding(15px,15px,15px,15px);
+                .address-wrap{
+                    @media @small-tablet,@large-mobile,@mobile{
+                    border-bottom: 1px solid #ccc;
+                    }
+                .loan-info{
+                    font-size: 16px;
+                    color: #193a60;
+                    font-weight: 600;
+                    .loan-no{
+                        display: inline-block;
+                        margin: 0;
+                        color: #193a60;
+                    }
+                    .multi-select{
+                        .padding(0,15px,0,5px);
+                        .multiselect-button{
+                            font-family: Lato-Regular, sans-serif;
+                            border:0;
+                            outline: 0;
+                            border-radius: 0;
+                            color: #193a60;
+                            .padding(0,0,0,0);
+                            height:auto;
+                            background: transparent;
+                            &:active{
+                                outline:0;
+                                border: 0;
+                            }
+
+                            .select-icon{
+                                font-size: 9px;
+                                color: #193a60;
+                                display: inline-block;
+                                .padding(5px,0,0,5px);
+                            }
+                        }
+                        
+                        .select-menu{
+                            left: -2px;
+                            right: 0;
+                            top: 20px;
+                            border: 1px solid @border-secondary-color;
+                            display: none;
+                            &:hover{
+                                display: block;
+                            }
+                        }
+                        &:hover{
+                            .select-menu{
+                                display: block;
+                            }
+                        }
+                    }
+                    .single-loan-num{
+                        display: inline-block;
+                        margin: 0;
+                        color: #193a60;
+                    }
+                }
+                .address{
+                    font-size: 14px;
+                    display: block;
+                    .margin(5px,0,0,0);
+                    color: #777;
+                    }
+                }
+            }
+        }

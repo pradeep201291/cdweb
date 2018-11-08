@@ -1,0 +1,103 @@
+<div class="left-nav" [ngClass]="{'slideInLeft':showMenu,'slideOutLeft':!showMenu}">
+
+	<div class="profile text-center">
+		<img class="profile-pic" />
+		<p class="profile-name">John Jennings</p>
+	</div>
+
+
+	<div class="multi-select menu-loan-selector">
+		<button class="multiselect-button">
+			<span class="loan-details">
+				<span class="loan-number">Loan : <span>1234567</span></span>
+				<span class="loan-address">123 Main Street, Chicago, IL 123456</span>
+			</span>
+			<span class="glyphicon glyphicon-triangle-bottom select-icon fR"></span>
+		</button>
+		<ul class="select-menu">
+			<li>
+				<span class="loan-details">
+					<span class="loan-number">Loan : <span>1234567</span></span>
+					<span class="loan-address">123 Main Street, Chicago, IL 123456</span>
+				</span>
+			</li>
+			<li>
+				<span class="loan-details">
+					<span class="loan-number">Loan : <span>1234567</span></span>
+					<span class="loan-address">123 Main Street, Chicago, IL 123456</span>
+				</span>
+			</li>
+			<li>
+				<span class="loan-details">
+					<span class="loan-number">Loan : <span>1234567</span></span>
+					<span class="loan-address">123 Main Street, Chicago, IL 123456</span>
+				</span>
+			</li>
+		</ul>
+	</div>
+
+	<ul>
+		<li class="summary" routerLink="/summary" routerLinkActive="active" (click)="removeOverlay()">
+			<span><a href="javascript:void(0);">Summary</a></span>
+		</li>
+		<li class="dashboard" routerLink="/dashboard" routerLinkActive="active" (click)="removeOverlay()">
+			<span><a href="javascript:void(0);">Dashboard</a></span>
+
+		</li>
+		<li class="loan-detail" routerLink="/loandetails" routerLinkActive="active" (click)="removeOverlay()">
+			<span><a href="javascript:void(0);">Loan Details</a></span>
+
+		</li>
+		<li class="documents" routerLink="/documents" routerLinkActive="active" (click)="removeOverlay()">
+			<span><a href="javascript:void(0);">Documents</a></span>
+		</li>
+
+		<li class="contacts" routerLink="/contact" routerLinkActive="active" (click)="removeOverlay()">
+			<span><a href="javascript:void(0);">Contacts</a></span>
+		</li>
+		<!-- for mobile devices below 480 -->
+		<li class="nav-section mob-nav-list">
+			<ul>
+				<li class="notification-mob" routerLink="/notification" routerLinkActive="active" (click)="removeOverlay()">
+					<span><a href="javascript:void(0);">Notification</a></span>
+				</li>
+				<li class="message-mob" routerLink="/message" routerLinkActive="active" (click)="removeOverlay()">
+					<span><a href="javascript:void(0);">Message</a></span>
+				</li>
+			</ul>
+		</li>
+		<hr/>
+		<!-- end -->
+		<!-- settings and logout -->
+		<li class="nav-section settings-links">
+			<ul>
+				<li class="settings"  routerLinkActive="active" (click)="removeOverlay()">
+					<span><a href="javascript:void(0);">Settings</a></span>
+				</li>
+				<li class="logout"  routerLinkActive="active" (click)="removeOverlay()">
+					<span><a href="javascript:void(0);">Logout</a></span>
+				</li>
+			</ul>
+		</li>
+		<hr/>
+		<!-- end -->
+		<!-- licence policy -->
+		<li class="nav-section policy-links">
+			<ul>
+				<li class=""  routerLinkActive="active" (click)="removeOverlay()">
+					<span><a href="javascript:void(0);">About Us</a></span>
+				</li>
+				<li class=""  routerLinkActive="active" (click)="removeOverlay()">
+					<span><a href="javascript:void(0);">Contact Us</a></span>
+				</li>
+				<li class=""  routerLinkActive="active" (click)="removeOverlay()">
+					<span><a href="javascript:void(0);">Privacy Policy</a></span>
+				</li>
+				<li class="" routerLinkActive="active" (click)="removeOverlay()">
+					<span><a href="javascript:void(0);">End User License Agreement</a></span>
+				</li>
+			</ul>
+		</li>
+		<!-- end -->
+	</ul>
+</div>

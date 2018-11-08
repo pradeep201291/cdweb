@@ -1,0 +1,45 @@
+.no-pending-wrap{
+    .no-pending{
+        .no-pending-img{
+            background-image: url("@{base-url}images/thumbs-up.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right 0px;
+
+              @media @large-desktop{
+                background-size: 70%;
+              }
+              @media @desktop{
+                background-size: 60%;
+              }
+              @media @tablet{
+                width:100%;
+                background-size: 100px;
+                background-position: 50% 0;
+              }
+              @media @small-tablet{
+                width:100%;
+                background-size: 90px;
+                background-position: 50% 0;
+              }
+              @media @large-mobile{
+                width:100%;
+                background-size: 80px;
+                background-position: 50% 0;
+              }
+              @media @mobile{
+                width:100%;
+                background-size: 60px;
+                background-position: 50% 0;
+              }
+        }
+        .carousel-content{
+           button{
+              font-size: 16px;
+               @media @mobile{
+                  width:100%;
+              }
+            }
+        }
+    }
+}

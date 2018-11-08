@@ -1,0 +1,278 @@
+.main-content{
+    .form-1003-wrap{
+        .card-wrap{
+            .form-content{
+                .input-wrap{
+                        width: 80%;
+                        margin: 0 auto 20px !important;
+                        max-width: 800px;
+                        @media @mobile,@large-mobile,@small-tablet,@tablet,@desktop{
+                          width: 100%;  
+                        }
+
+                        &.single-col{
+                            max-width: 350px;
+                            margin: 0 auto;
+
+                            @media @mobile{
+                                max-width: 250px;
+                            }
+                        }
+
+                        .customRadio{
+                            display: none;
+                        }
+                        .customRadio + label{
+                            .padding(15px,95px,15px,95px);
+                            font-size: 18px;
+                            font-weight: 600;
+                            .margin(20px,5px,20px,5px);
+                            border-radius: 2px;
+                            border: 0;
+                            background: #193a60;
+                            color: #ffffff;
+                            min-width: 340px;
+                            cursor: pointer;
+
+                            @media @large-mobile{
+                                margin-top: 0;
+
+                                &:first-child{
+                                    margin-top: 20px;
+                                }
+                            }
+                            @media @mobile{
+                                .padding(15px,70px,15px,70px);
+                                margin-top: 0;
+                                min-width: 250px;
+
+                                &:first-child{
+                                    margin-top: 20px;
+                                }
+                            }
+
+                            &.selected{
+                                background: #ffffff;
+                                color: #193a60;
+                                border: 2px solid #193a60;
+                                background-image: url("@{base-url}images/tick_icon.png");
+                                background-repeat: no-repeat;
+                                background-size: 25px;
+                                background-position: 15px center;
+                                cursor: inherit;
+                            }
+                            &.unselected{
+                                background: #ffffff;
+                                color: #193a60;
+                                border: 2px solid #193a60;
+                            }
+                        }
+
+                        
+                                
+                            .regular-input{
+                                margin-bottom: 20px;
+                                label{
+                                    font-weight: normal;
+                                    display: block;
+                                }
+                                input,select{
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    border-radius: 5px;
+                                    border: solid 1px #c5ced7;
+                                    min-height: 55px;
+                                    width: 100%;
+                                    display: inline-block;
+                                    font-size: 16px;
+                                }
+
+                                &.dob{
+
+                                }
+                                &.ssn{
+
+                                    input{
+                                        width: 31%;
+                                        margin-right: 8px;
+
+                                        &:last-child{
+                                            margin-right: 0px;
+                                        }
+                                    }
+                                }
+                                &.dollar{
+                                    position: relative;
+                                    input{
+                                        padding-left: 30px;
+                                    }
+                                    input+span{
+                                        position: absolute;
+                                        top: 17px;
+                                        left: 14px;
+                                        font-size: 18px;
+                                    }
+                                }
+                            }
+                        
+                        .customCheckBox{
+                            &+label{
+                                font-weight: normal;
+                                padding-left: 40px;
+                                background-repeat: no-repeat;
+                                background-size: 20px;
+                                 background-image: url("@{base-url}images/checkbox-unchecked.png");
+                            }
+                            &:checked{
+                                &+label{
+                                    background-image: url("@{base-url}images/checkbox-checked.png");
+                                }
+                            }
+                        }
+                        
+                        &.downPayment{
+                            .dollar{
+                                    input+span{
+                                        left: 29px;
+                                    }
+                                }
+                            .percentage{
+                                    position: relative;
+                                    input{
+                                        padding-right: 30px;
+                                    }
+                                    input+span{
+                                        position: absolute;
+                                        top: 17px;
+                                        right: 29px;
+                                        font-size: 18px;
+                                    }
+                            }
+                        }
+
+                        &.propertyUse{
+                            input+label{
+                                @media @mobile{
+                                    min-width: 243px;
+                                    .padding(15px,40px,15px,40px);
+                                }
+                            }
+                        }
+                    }
+
+                    .carousel-wrap{
+                        #FormCarousel{
+                            .input-wrap{
+                                        .input-field{
+                                            margin-bottom: 7px;
+                                            .input-div{
+                                                border-radius:5px;
+                                                border: solid 1px #c5ced7;
+                                                position: relative;
+                                                .padding(22px,0,0,0);
+                                                min-height:55px;
+                                                margin-bottom:5px;
+
+                                                input{
+                                                    border:0;
+                                                    color:@base-input-color;
+                                                    -webkit-box-shadow:none;
+                                                    -moz-box-shadow:none;
+                                                    -ms-box-shadow:none;
+                                                    -o-box-shadow:none;
+                                                    box-shadow:none;
+                                                    font-size:18px;
+                                                    .padding(5px,10px,0px,10px);
+                                                    &:focus,&:active{
+                                                        outline:none;
+                                                    }
+                                                    @media @tablet,@small-tablet{
+                                                        font-size:17px;
+                                                    }
+                                                    @media @mobile,@large-mobile{
+                                                        font-size:16px;
+                                                    }
+                                                }
+                                                .placeholder-label {
+                                                    position: absolute;
+                                                    pointer-events: none;
+                                                    left: 10px;
+                                                    top: 28px;
+                                                    -webkit-transition: 0.4s ease all;
+                                                    -moz-transition: 0.4s ease all;
+                                                    -ms-transition: 0.4s ease all;
+                                                    -o-transition: 0.4s ease all;
+                                                    transition: 0.4s ease all;
+                                                    font-size: 18px;
+                                                    color: @label-text-color;
+                                                    @media @tablet,@small-tablet{
+                                                        font-size:17px;
+                                                    }
+                                                    @media @mobile,@large-mobile{
+                                                        font-size:16px;
+                                                    }
+
+                                                    }
+                                                input:focus ~ .placeholder-label,
+                                                input:not(:focus):valid ~ .placeholder-label{
+                                                        top: 6px;
+                                                        left: 10px;
+                                                        font-size: 14px;
+                                                        color: #aaa;
+                                                }
+                                                &.error{
+                                                    border: solid 1px @error-color;
+                                                }
+                                                &.valid{
+                                                    border: solid 1px #193a60;
+                                                }
+                                            }
+
+                                            .error-text{
+                                                color:@error-color;
+                                                font-size:14px;
+                                            }
+                                            .multi-select{
+                                                width: 100%;
+                                                .padding(0,0,0,0);
+                                                .multiselect-button{
+                                                    border-radius:5px;
+                                                    border: solid 1px #c5ced7;
+                                                    background: @secondary-background;
+                                                    position: relative;
+                                                    min-height:58px;
+                                                    margin-bottom:5px;
+                                                    
+                                                    .select-icon{
+                                                        color: #b9c3ce;
+                                                    }
+                                                }
+                                                .select-menu{
+                                                    left: 0px;
+                                                    right: 0px;
+                                                    border: solid 1px #c5ced7;
+                                                }
+                                            }
+                                        }
+
+                                        .address-info{
+                                            margin-bottom: 40px;
+                                            .address{
+                                                p{
+                                                    margin-bottom: 0;
+                                                }
+                                            }
+                                        }
+                                        .previous-address{
+                                            margin-top: 25px;
+                                            padding-top: 35px;
+                                            border-top: 1px solid #e7e8ee;
+                                        }
+                                        
+                                    }
+                        }
+                    }
+            }
+        }
+    }
+}

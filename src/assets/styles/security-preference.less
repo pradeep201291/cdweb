@@ -1,0 +1,60 @@
+.security-preference-body{
+   .security-preferences-wrap{
+       .padding(0,0,0,0);
+     .security-preferences{
+         color:@secondary-text-color;
+         font-weight:600;
+         width:350px;
+         margin: 0 auto;
+         @media @mobile{
+            width:100%;
+        }
+        
+        .row-2fa{
+            .on-off-button{
+                font-weight: 600;
+                .btn-2fa-on{
+                    color:@base-text-color;
+                    background-color: @border-secondary-color;
+                    &:focus{
+                            outline:none;
+                    }
+                }
+            }
+           }
+           .phone-num-wrap{
+               .phone-info{
+                   .number-edit{
+                       color:@base-info-color;
+                       cursor:pointer;
+                   }
+               }
+               .phone-input{
+
+               }
+               .get-code-btn{
+                    .btn{
+                        width:49%;
+                    }
+                }
+           }
+           
+        hr{
+            border-top: 1px solid @secondary-text-color;
+        }
+        
+        .verification-wrap{
+             
+                .verification-heading{
+                   color:@secondary-text-color;
+                    font-size: 22px;
+                    font-weight:600;
+                }
+                .enter-code-label{
+                    color:@secondary-text-color;
+                    font-size:14px;
+                }
+            }
+     }
+   } 
+}

@@ -1,0 +1,11 @@
+<div class="row msg-wrap" routerLink="/message" routerLinkActive="active">
+	<h4 class="section-header">{{resource.widgetTitle}}</h4>
+	<div class="col-sm-12 text-center">
+		<span class="msg-dash"></span>
+		<span *ngIf="messageCount > 0" class="dashboard-notification">{{messageCount}}</span>
+		<span *ngIf="messageCount == 0" class="msg-info-dash">{{resource.noMessageText}}</span>
+	</div>
+	<div class="col-sm-12 text-center">
+		<label class="blue-text">{{resource.messageLinkText}}</label>
+	</div>
+</div>

@@ -1,0 +1,78 @@
+{
+    "staticAsset": {
+        "searchPattern": {
+            "default": "@SL_APP_ROOT_PATH@",
+            "privateLabel": "/assets/"
+        },
+        "path": {
+            "local": "/",
+            "ci": "/ci/cd/",
+            "dev": "/dev/cd/",
+            "dev2": "/dev2/cd/",
+            "test": "/test/cd/",
+            "test1": "/test1/cd/",
+            "test4": "/test/cd/",
+			"test2": "/test2/cd/",
+            "prod": "/"
+        }
+    },
+    "webPackBundle": {
+        "prod": [
+            "prod",
+            "test",
+            "test1",
+            "test4",
+			"test2"
+        ],
+        "nonProd": [
+            "local",
+            "ci",
+            "dev",
+            "dev2"
+        ]
+    },
+    "brandingConfig": {
+        "prod": [
+            "prod"
+        ],
+        "nonProd": [
+            "local",
+            "ci",
+            "dev",
+            "dev2",
+            "test",
+            "test1",
+            "test4",
+			"test2"
+        ]
+    },
+    "webConfig": {
+        "prod": [
+            "prod"
+        ],
+        "nonProd": [
+            "local",
+            "ci",
+            "dev",
+            "dev2",
+            "test",
+            "test1",
+            "test4",
+			"test2"
+        ]
+    },
+    "jv": {
+        "src": [
+            "./src/assets/styles/JV/home/home-style.less",
+            "./src/assets/styles/JV/premia/premia-style.less",
+            "./src/assets/styles/JV/premia/private-style.less",
+            "./src/assets/styles/JV/premia/results-style.less",
+            "./src/assets/styles/JV/premia/williamlyon-style.less",
+            "./src/assets/styles/JV/premia/compass-style.less",
+            "./src/assets/styles/JV/premia/equity-style.less",
+            "./src/assets/styles/JV/premia/gibraltar-style.less"
+        ],
+        "dest": "./dist/assets/styles/jv/"
+    },
+    "appTitle": "Stearns Lending"
+}

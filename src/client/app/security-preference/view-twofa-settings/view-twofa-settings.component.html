@@ -1,0 +1,40 @@
+<div class="security-preferences authentication-box">
+    <div class="security-preference-content">
+        <div *ngIf="securityPreference">
+            <div class="security-preference-2fa-wrap text-left">
+                <div class="row row-2fa">
+                    <div class="col-xs-6">
+                        <span class="status-label">Status: </span>
+                        <span class="status-value">{{securityPreference.TwoFactorEnabled? 'On' : 'Off'}}</span>
+                    </div>
+                    <div class="col-xs-6 text-right row-2fa">
+                        <div class="btn-group on-off-button " data-toggle="buttons">
+                            <label class="btn btn-default" [ngClass]="{'btn-2fa-on': securityPreference.TwoFactorEnabled, 'btn-2fa-off': !securityPreference.TwoFactorEnabled}">
+                                        <input  value="true" (click)="toggleTwoFASettings(true)"  type="radio" name="authState"  autocomplete="off"> 
+                                        On
+                                    </label>
+                            <label class="btn btn-default" [ngClass]="{'btn-2fa-on': !securityPreference.TwoFactorEnabled, 'btn-2fa-off': securityPreference.TwoFactorEnabled}">
+                                        <input  value="false"  (click)="toggleTwoFASettings(false)"  type="radio"  name="authState"  autocomplete="off">
+                                        Off
+                                    </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="phone-num-wrap">
+                    <div class="phone-info">
+                        <span class="phone-text">Phone number: </span>
+                        <span>
+                    <span class="country-code" *ngIf="hasPhoneNumber">+1</span>{{phoneNumber | phoneNumber:
+                        false}}</span>
+                        <span *ngIf="securityPreference.TwoFactorEnabled" (click)="editPreferences()" class="number-edit fR">Edit</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <button (click)="onClose()" type="button" class="login-button secondary-button btn btn-block">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

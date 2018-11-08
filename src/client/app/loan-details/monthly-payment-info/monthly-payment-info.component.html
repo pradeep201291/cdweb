@@ -1,0 +1,39 @@
+<div class="loan-details-content monthly-payment-content row">
+    <div class="col-xs-12 loan-element">
+        <p class="loan-label">{{resource.monthly_principal}}</p>
+        <p *ngIf="loanDetails.p_and_i_payment" class="loan-value">{{loanDetails?.p_and_i_payment | currency: 'USD':true}}</p>
+        <p *ngIf="!loanDetails.p_and_i_payment" class="loan-value">N/A</p>
+    </div>
+    <div class="col-xs-12 operator-div">
+       (<span>+</span>) 
+    </div>
+    <div class="col-xs-12 loan-element">
+        <p class="loan-label">{{resource.monthly_mortgage}}</p>
+        <p *ngIf="loanDetails.mi" class="loan-value">{{loanDetails?.mi | currency: 'USD':true}}</p>
+        <p *ngIf="!loanDetails.mi" class="loan-value">N/A</p>
+    </div>
+    <div class="col-xs-12 operator-div">
+        <span>+</span>
+    </div>
+    <div class="col-xs-12 loan-element">
+        <p class="loan-label">{{resource.escrow_payment}}</p>
+        <p *ngIf="loanDetails.escrow_payment" class="loan-value">{{loanDetails.escrow_payment | currency: 'USD':true}}</p>
+        <p *ngIf="!loanDetails.escrow_payment" class="loan-value">N/A</p>
+    </div>
+    <div class="col-xs-12 operator-div">
+        <span>=</span>
+    </div>
+     <div class="col-xs-12 loan-element">
+        <p class="loan-label">{{resource.payment}}</p>
+        <p *ngIf="loanDetails.payment" class="loan-value">{{loanDetails.payment | currency: 'USD':true}}</p>
+        <p *ngIf="!loanDetails.payment" class="loan-value">N/A</p>
+    </div>
+    <div class="col-xs-12 separator-div">
+        <hr/>
+    </div>
+	<div class="col-xs-12 loan-element">
+		<p class="loan-label">{{resource.first_pay_date}}</p>
+		<p *ngIf="loanDetails?.first_pay_date" class="loan-value">{{loanDetails?.first_pay_date | date }}</p>
+        <p *ngIf="!loanDetails?.first_pay_date" class="loan-value">TBD</p>
+	</div>
+</div>

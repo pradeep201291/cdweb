@@ -1,0 +1,97 @@
+<div class="row table-head-row" (click)="hidePover()">
+	<div class="col-sm-4 col-xs-4 table-top-label" style="width:63.33%">
+		<h3>Your To-Dos on the loan – please complete all your open items now to help move your loan forward</h3>
+	</div>
+
+	<div class="table-top-btn btn-group fR" data-toggle="buttons">
+		<label class="btn btn-primary" [ngClass]="{active: showOpenItems}">
+            <input type="radio" name="options" id="option1" autocomplete="off" (click)='filterItems("open")'   checked> {{resource.openItems}}
+        </label>
+		<label class="btn btn-primary" [ngClass]="{active: !showOpenItems}">
+            <input type="radio" name="options" id="option3" autocomplete="off" (click)='filterItems("closed")'> {{resource.CompletedItems}}
+        </label>
+	</div>
+</div>
+<div class="table-responsive dashboard-table">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th class="description-head">{{resource.descriptionHeader}}</th>
+				<th class="borrower-name-head table-sort">{{resource.borrowerNameHeader}} &nbsp;
+					<span *ngIf="sortBy === 'borrower' && sortOrder === 'desc'" (click)='sortNeeds("borrower", "asc" )' class="sort-down"></span>
+					<span *ngIf="sortBy === 'borrower' && sortOrder === 'asc'" (click)='sortNeeds("borrower", "desc")' class="sort-up"></span>
+					<span *ngIf="sortBy !== 'borrower'" (click)='sortNeeds("borrower", "desc")' class="sort"></span>
+				</th>
+				<th class="created-date-head table-sort">{{resource.createdDateHeader}} &nbsp;
+					<span *ngIf="sortBy === 'created_date' && sortOrder === 'desc'" (click)='sortNeeds("created_date", "asc" )' class="sort-down"></span>
+					<span *ngIf="sortBy === 'created_date' && sortOrder === 'asc'" (click)='sortNeeds("created_date", "desc")' class="sort-up"></span>
+					<span *ngIf="sortBy !== 'created_date'" (click)='sortNeeds("created_date", "desc")' class="sort"></span>
+				</th>
+				<th class="due-date-head table-sort">{{resource.dueDateHeader}} &nbsp;
+					<span *ngIf="sortBy === 'due_date' && sortOrder === 'desc'" (click)='sortNeeds("due_date", "asc" )' class="sort-down"></span>
+					<span *ngIf="sortBy === 'due_date' && sortOrder === 'asc'" (click)='sortNeeds("due_date", "desc")' class="sort-up"></span>
+					<span *ngIf="sortBy !== 'due_date'" (click)='sortNeeds("due_date", "desc")' class="sort"></span>
+				</th>
+				<th class="view-comments-head" *ngIf="showOpenItems ===true"></th>
+				<th class="table-sort status-head" *ngIf="showOpenItems !==true">{{resource.statusHeader}}</th>
+				<th class="action-head" *ngIf="showOpenItems ===true">{{resource.actionHeader}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let need of pagedNeedlist; let i = index;">
+				<td class="description">{{need.description}}</td>
+				<td>{{need.borrower}} </td>
+				<td> {{need.created_date ? (need.created_date | date) :"-" }} </td>
+				<td> {{need.due_date ? (need.due_date | date) :"-" }} </td>
+
+				<td *ngIf="showOpenItems ==true">
+					<a *ngIf="need.comments && need.action !=='ESign' && need.action !=='FormFree' && need.action !=='Message'" class="view-comments mouse-pointer" id="{{'tooltip_'+i}}"
+					 (click)="showPopup('tooltip_'+i,need)" data-placement="bottom" data-trigger="manual" data-toggle="popover" data-container="body"
+					 data-html="true">View Comments<span class="glyphicon glyphicon-triangle-bottom select-arrow"></span></a>
+				</td>
+
+
+				<td class="" *ngIf="showOpenItems !==true">{{need.status}} </td>
+				<td class=" action" *ngIf="showOpenItems ===true && need.action ==='ESign'">
+					<a (click)="getEsignURL(need)" class="table-link mouse-pointer">{{resource.completeText}}</a>
+				</td>
+				<td class=" action" *ngIf="showOpenItems ===true && need.action ==='Upload'"><a href="javascript:void(0)" (click)="uploadDocument(need.need_id)" class="table-link">{{resource.completeText}}</a></td>
+				<td class=" action" *ngIf="showOpenItems ===true && need.action ==='FormFree'">
+					<a (click)="showWidget(need.need_id,need.borrower_id)" class="table-link mouse-pointer">{{resource.completeText}}</a>
+				</td>
+				<td class="action" *ngIf="showOpenItems ===true && need.action ==='Message'">
+					<a (click)="getEsignURL(need)" class="table-link mouse-pointer">{{resource.completeText}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="no-needlist text-center" *ngIf="pagedNeedlist.length === 0">
+	<span *ngIf="showOpenItems">{{resource.openItemText}}</span>
+	<span *ngIf="!showOpenItems">{{resource.completeItemText}}</span>
+</div>
+
+<!-- pagination -->
+<div class="needlist-pagination text-right" *ngIf="pager.totalItems > 10">
+	<ul class="pagination">
+		<li id="previous" class="previous" (click)="previous()" *ngIf="pager.totalPages > 5">
+			<a class=""><span aria-hidden="true">&laquo;</span></a>
+
+		</li>
+		<li class="" [ngClass]="{active: currentPage === (page)}" *ngFor="let page of pager.pages;">
+			<a class="mouse-pointer" (click)="setCurrentPage(page)">{{page}}</a>
+		</li>
+		<li id="next" class="next" (click)="next()" *ngIf="pager.totalPages > 5">
+			<a class=""><span aria-hidden="true">&raquo;</span></a>
+		</li>
+	</ul>
+</div>
+
+<!-- popover -->
+
+<div id="comments-popover" *ngIf="viewComment" class="comments-popover hide">
+	<span class="close-popover glyphicon glyphicon-remove mouse-pointer" data-dismiss="popover" id="popover-hide" (click)="hidePover()"></span>
+	<p class="comments-row">
+		<span class="comments">{{viewComment}}</span>
+	</p>
+</div>

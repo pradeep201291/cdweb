@@ -1,0 +1,36 @@
+<div class="f1003-content">
+	<div class="form-1003-wrap">
+        <form novalidate [formGroup]="loanOptionForm">
+            <div class="card-wrap welcome-wrap">
+                <!-- header section -->
+                <!--<div class="text-center form-header">
+                    <span class="title"></span>
+                </div>-->
+                <div class="form-content text-center">
+                    <!-- question section -->
+                    <div class="question-wrap">
+                        <span class="card-icon welcome-icon"></span>
+                        <p class="welcome-text">Welcome <span>Geoff</span>, We can help you!&reg;</p>
+                        <p>Are you looking to buy a home or refinance an existing loan ?</p>
+                    </div>
+                    <!-- input section -->
+                    <div class="input-wrap">
+                        <input type="radio" id="purchaseId" class="customRadio mouse-pointer" formControlName="notification" value="purchase" />
+                        <label for="purchaseId" [ngClass]="{'selected':loanOptionForm.value.notification==='purchase', 'unselected':loanOptionForm.value.notification==='refinance'}">
+                            Purchase</label>
+
+                        <input type="radio" id="refinanceId" class="customRadio mouse-pointer" formControlName="notification" value="refinance" />
+                        <label for="refinanceId" [ngClass]="{'selected':loanOptionForm.value.notification==='refinance', 'unselected':loanOptionForm.value.notification==='purchase'}">
+                            Refinance</label>
+                    </div>
+                    <!-- button section -->
+                    <div class="button-wrap">
+                        <button type="button " class="primary-button">
+                                Continue
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+	</div>
+</div>

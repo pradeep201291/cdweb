@@ -1,0 +1,25 @@
+<div id="overlay" (click)="disableOverlay()"></div>
+
+<div class="wrapper" [ngClass]="backgroundClass">
+	<sl-header [isLoggedIn]="!isLogin" [logosrc]="headerLogo" [logoVisibility]="isLogoActive"></sl-header>
+	<div [ngClass]="authenticatedPage">
+
+		<sl-nav *ngIf="!isLogin"></sl-nav>
+		<router-outlet>
+			<!--<progress-bar></progress-bar>-->
+		</router-outlet>
+	</div>
+	<div class="wrapper-after"></div>
+</div>
+<!--<sl-footer *ngIf="isFooterActive" [hyperlinkItems]="linkItems" [copyRightContent]="copyRightTxt" [policyContent]="policyTxt"
+			[logosrc]="footerLogo">
+</sl-footer>-->
+
+<sl-footer *ngIf="isFooterActive" [companyCode]="companyCode" [hyperlinkItems]="linkItems" [copyRightContent]="copyRightTxt" [policyContent]="policyTxt"
+				[logosrc]="footerLogo"></sl-footer>
+<sl-announcement></sl-announcement>
+
+<div class="alert alert-danger alert-dismissable app-alert fade in text-center hide">
+    <a class="close close-alert" data-dismiss="alert" aria-label="close">×</a>
+	<span class="alert-content"><strong>Warning!</strong> something is wrong.</span>
+</div>

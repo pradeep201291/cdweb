@@ -1,0 +1,83 @@
+<div class="view-docs-table-wrap">
+      <h3 class="content-heading">Here are some important documents on your loan.</h3>
+    <div class="view-docs table-responsive">
+        <table class="table docs-table">
+            <thead>
+                <tr>
+                    <th class="doc-name">Document Name&nbsp;
+                        <span *ngIf="sortBy === 'document_name' && sortOrder === 'desc'" (click)='sortNeeds("document_name", "asc" )' class="sort-down"></span>
+                        <span *ngIf="sortBy === 'document_name' && sortOrder === 'asc'" (click)='sortNeeds("document_name", "desc")' class="sort-up"></span>
+                        <span *ngIf="sortBy !== 'document_name'" (click)='sortNeeds("document_name", "desc")' class="sort"></span>
+                    </th>
+                    <th class="upload-date">Uploaded on&nbsp;
+                        <span *ngIf="sortBy === 'last_update_datetime' && sortOrder === 'desc'" (click)='sortNeeds("last_update_datetime", "asc" )'
+                            class="sort-down"></span>
+                            <span *ngIf="sortBy === 'last_update_datetime' && sortOrder === 'asc'" (click)='sortNeeds("last_update_datetime", "desc")'
+                                class="sort-up"></span>
+                                <span *ngIf="sortBy !== 'last_update_datetime'" (click)='sortNeeds("last_update_datetime", "desc")' class="sort"></span>
+                    </th>
+                    <th class="view-btn"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let document of pagedDocuments">
+                    <td><span [ngClass]="setDocumentIcon(document.document_type)"></span><span>{{document.document_name}}</span></td>
+                    <td><span>{{document.last_update_datetime | UTCDatePipe | date:"yMMMdjms"}}</span></td>
+                    <td class="view-btn">
+                        <button class="btn secondary-button" (click)="viewDocument(document)">View</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="no-documents text-center" *ngIf="pagedDocuments.length === 0 && isDocumentsLoaded">
+        <span>No documents to be viewed.</span>
+    </div>
+    <div class="document-pagination text-right" *ngIf="pager.totalItems > 10">
+        <ul class="pagination">
+            <li class="previous" (click)="previous()" *ngIf="pager.totalPages > 5">
+                <a class=""><span aria-hidden="true">&laquo;</span></a>
+            </li>
+            <li [ngClass]="{active: currentPage === (page)}" *ngFor="let page of pager.pages;">
+                <a class="" (click)="setCurrentPage(page)">{{page}}</a>
+            </li>
+            <li class="next" (click)="next()" *ngIf="pager.totalPages > 5">
+                <a class=""><span aria-hidden="true">&raquo;</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal fade" id="documentView" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" *ngIf="imageUrl">
+            <div class="modal-header">
+                <span  class="download fL">
+                        <img (click)="downloadImage()" src="@SL_APP_ROOT_PATH@assets/images/save-disk-blue.png">
+                        <h4 class="document-name">{{documentName}}</h4>
+                </span>
+                <span class="close glyphicon glyphicon-remove" (click)="closeModal()" data-dismiss="modal"></span>
+            </div>
+            <div class="modal-body">
+                <iframe *ngIf="!isIeOrSafari && !ispdf && !isTiff" [src]='sanitizer?.bypassSecurityTrustResourceUrl(imageUrl)'></iframe>
+                <img *ngIf="isIeOrSafari && !ispdf && !isTiff" style="width:auto;height:auto;max-height:100%;max-width:100%" [src]='sanitizer?.bypassSecurityTrustResourceUrl(imageUrl)'
+                />
+                <pdf-viewer style="display: inline-block;width: 100%;overflow-y: auto;height: 100%;" *ngIf="ispdf && !isTiff" [src]="imageUrl" [original-size]="true"
+                    [show-all]="true"></pdf-viewer>
+
+            </div>
+        </div>
+        <div class="modal-content" *ngIf="decodedString">
+            <div class="modal-header">
+                <span (click)="downloadImage()" class="download">
+                        <img src="@SL_APP_ROOT_PATH@assets/images/save-disk-blue.png">
+                        <h4 class="document-name">{{documentName}}</h4>
+                </span>
+                <span class="close glyphicon glyphicon-remove" (click)="closeModal()" data-dismiss="modal"></span>
+            </div>
+            <div class="modal-body ">
+                <pre>{{decodedString}}</pre>
+            </div>
+        </div>
+    </div>
+</div>

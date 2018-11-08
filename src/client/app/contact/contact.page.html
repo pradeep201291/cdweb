@@ -1,0 +1,9 @@
+<sl-loan-actionbar (onLoanSelected)="onLoanSelected($event)"></sl-loan-actionbar>
+<div class="main-content">
+  <div class="contact-page-wrap">
+    <h3 class="content-heading">Contacts</h3>
+    <div class="contact-page">
+      <contact-card [contactList]="contactCollection" (onMessageSelected)="goToMessage($event)"></contact-card>
+    </div>
+  </div>
+</div>

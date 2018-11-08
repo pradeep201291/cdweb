@@ -1,0 +1,134 @@
+.main-content{
+    .notification-wrap{
+        .notification-list{
+            .action{
+                .padding(0px,0px,20px,20px);
+
+                @media @mobile{
+                    .padding(0px,0px,20px,7px);
+                }
+
+            .read{
+                @media @mobile,@large-mobile,@small-tablet{
+                    float:none;
+                    margin-bottom:10px;
+                }
+                .icon{
+                    display: inline-block;
+                    background-repeat:no-repeat;
+                    background-size:100% 100%;
+                    margin-right:5px;
+                }
+                label{
+                    color:@base-primary-color;
+                    font-size:14px;
+                    margin-right:30px;
+                    font-weight: normal;
+                   &.mark-unread{
+                       margin-right:0px;
+                   }
+                }
+                .delete{
+                    .delete-icon{
+                        background-image:url("@{base-url}images/delete_sm_icon.png");
+                        width:15px;
+                        height:20px;
+                        vertical-align: sub;
+                        &:hover{
+                            background-image:url("@{base-url}images/delete_sm_icon-hover.png");
+                        }
+                    }
+                }
+                .mark-read{
+                    .read-icon{
+                        background-image:url("@{base-url}images/read_sm_icon.png");
+                        width:20px;
+                        height:20px;
+                        &:hover{
+                            background-image:url("@{base-url}images/read_sm_icon-hover.png");
+                        }
+                    }
+                }
+                .mark-unread{
+                    .unread-icon{
+                        background-image:url("@{base-url}images/unread_sm_icon.png");
+                        width:20px;
+                        height:15px;
+                        &:hover{
+                            background-image:url("@{base-url}images/unread_sm_icon-hover.png");
+                        }
+                    }
+                }
+            }
+            .select-all{
+                .select{
+                    font-size:14px;
+                    font-weight: normal;
+                    margin-left:10px;
+                    color:@base-primary-color;
+                }
+            }
+        }
+        .notification-content{
+            
+        .msg-row{
+            background: @secondary-background;
+            overflow:hidden;
+            margin-bottom:10px;
+            .padding(20px,30px,20px,20px);
+
+            @media @mobile{
+                .padding(7px,7px,7px,7px);
+            }
+                
+            .message-text{
+                overflow:hidden;
+                color:@base-primary-color;
+                font-weight:600;
+                .msg{
+                    .padding(0px,0px,0px,10px);
+                    background-position: 15px top ;
+                    background-size: 17px 20px;
+                    background-repeat: no-repeat;
+
+                    @media @mobile{
+                        .padding(0px,0px,0px,35px);
+                        background-position: 8px top ;
+                    }
+                    label{
+                        .margin(0,0,0,0);
+                    }
+                }
+                .msg-info{
+                   margin-left:10px;
+
+                   @media @mobile,@large-mobile,@small-tablet{
+                        width:100%;
+                        margin-top:7px;
+                        text-align: right;
+                    }
+                }
+                &.read-msg{
+                     .msg{
+
+                        label{
+                                font-weight: 500;
+                        }
+                    }
+                    .msg-info{
+                        span{
+                            font-weight: 500;
+                        }
+                    }
+                }
+                 &.unread-msg{
+                     .msg{
+                    }
+                }
+            }
+        }
+        }
+
+        }
+    }
+}

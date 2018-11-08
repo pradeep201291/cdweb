@@ -1,0 +1,11 @@
+<div class="row noti-wrap" routerLink="/notification" routerLinkActive="active">
+	<h4 class="paddRL15">{{resource.widgetTitle}}</h4>
+	<div class="col-sm-12 text-center">
+		<span class="notification-dash"></span>
+		<span *ngIf="notificationCount > 0" class="dashboard-notification">{{notificationCount > 100 ? '99+' : notificationCount}}</span>
+		<span *ngIf="notificationCount == 0" class="msg-info-dash">{{resource.noNotificationText}}</span>
+	</div>
+	<div class="col-sm-12 text-center">
+		<label class="blue-text">{{resource.notificationLinkText}}</label>
+	</div>
+</div>

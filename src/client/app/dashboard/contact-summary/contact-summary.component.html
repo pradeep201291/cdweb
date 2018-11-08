@@ -1,0 +1,85 @@
+<div class="contact-panel-wrap" >
+	<div class="contact-wrap" *ngIf= "defaultItem">
+		<h4 class="section-header">{{resource.widgetTitle}}</h4>
+		<div class="contact-row-1">
+			<div class="mouse-pointer avatar" routerLink="/contact" routerLinkActive="active">
+			<img src="{{defaultItem.pic_url}}" class="contact-pic" />
+			</div>
+			<div class="dasboard-contact-info">
+				<div  class="">
+					<p class="contact-name">
+						<span>{{defaultItem.name}}</span>
+					</p>
+					<p class="contact-desig">
+						<span>{{defaultItem.type}}</span>  <span class="licenseNo" *ngIf="defaultItem.license">NMLS#&nbsp;{{defaultItem.license}}</span>
+					</p>
+					
+					<p class="contact-phone">
+						<span class="" *ngIf="defaultItem.phone" >{{defaultItem.phone}}</span>
+						<span class="" *ngIf="!defaultItem.phone" >NA</span>
+					</p>
+				</div>
+				<div>
+					<p class="mouse-pointer contact-email" (click)="sendMail(defaultItem.email)">
+						<a>
+							<span class="" style="white-space: nowrap;">{{defaultItem.email}}</span>
+						</a>
+					</p>
+
+					<p class="contact-message mouse-pointer" (click)="goToMessage(defaultItem.name)">
+						<a>
+							<span class="" style="white-space: nowrap;">Message</span>
+						</a>
+					</p>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="contact-row-2 text-center">
+			<button class="view-more mouse-pointer"  (click)="viewMoreContact()">{{viewContactText}}</button>
+			<!--<button class="view-more btn-disabled"  [disabled]="allContacts.length > 0 && !canViewMoreContact">View More Contacts</button>-->
+			<!--<a href="#" class="show-all"  routerLink="/contact" routerLinkActive="active">Show All Contacts</a>-->
+		</div>
+	</div>
+	<div class="contact-viewmore-wrap " *ngIf= "canViewMoreContact">
+		<div class="contact-wrap contact-viewmore" *ngFor= "let otherContact of otherContacts">
+			<span class="close-contact glyphicon glyphicon-remove mouse-pointer" (click)="closeContact(otherContact)"></span>
+			<h4 class="section-header">{{resource.widgetTitle}}</h4>
+			<div class="contact-row-1">
+				<div class="mouse-pointer avatar" routerLink="/contact" routerLinkActive="active">
+				<img src="{{otherContact.pic_url}}" class="contact-pic" />
+				</div>
+				<div class="dasboard-contact-info">
+					<div  class="mouse-pointer" routerLink="/contact" routerLinkActive="active">
+						<p class="contact-name">
+							<span>{{otherContact.name}}</span>
+						</p>
+
+						<p class="contact-desig">
+							<span>{{otherContact.type}}</span>  <span class="licenseNo" *ngIf="otherContact.license" >NMLS# {{otherContact.license}}</span>
+						</p>
+						
+						<p class="contact-phone">
+							<span class="" *ngIf="otherContact.phone">{{otherContact.phone}}</span>
+							<span class="" *ngIf="!otherContact.phone">NA</span>
+						</p>
+					</div>
+					<div>
+						<p class="contact-email" (click)="sendMail(otherContact.email)">
+							<a>
+								<span class="" style="white-space: nowrap;">{{otherContact.email}}</span>
+							</a>
+						</p>
+						<p class="contact-message mouse-pointer" (click)="goToMessage(otherContact.name)">
+						<a>
+							<span class="" style="white-space: nowrap;">Message</span>
+						</a>
+						</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+</div>

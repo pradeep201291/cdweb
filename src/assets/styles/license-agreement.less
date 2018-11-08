@@ -1,0 +1,46 @@
+.license-wrap{
+    .padding(86px,0,0,0);
+    .login-heading{
+          @media @mobile,@large-mobile{
+            .margin(30px,0,29px,0);
+         }
+    }
+    .authentication-box{
+        width: 800px;
+        background: @secondary-background;
+        border:1px solid @border-secondary-color;
+        @media @mobile,@large-mobile,@small-tablet,@tablet{
+            width: 100%;
+        }
+        .eula-wrap{
+            .license-scroll-wrap{
+                .padding(0px,0px,0px,0px);
+                color: @base-text-color;
+                .eula-div{
+                    overflow-y: auto;
+                    -webkit-overflow-scrolling: touch;
+                    position: relative;
+                    .padding(15px,15px,15px,15px);
+                    .eula-frame{
+                        position: relative;
+                        border: none;
+                        min-height: 350px;
+
+                        @media @mobile,@large-mobile{
+                             min-height: 200px;
+                        }
+                    }
+                }
+            }
+            .eula-btn{
+                text-align: center;
+                button{
+                    width: 48%;
+                    max-width: 250px;
+                    .margin(10px,0px,10px,0px);
+
+                }
+            }
+        }
+    }
+}

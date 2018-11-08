@@ -1,0 +1,45 @@
+.upload-summary-wrap{
+   .upload-summary{
+      .upload-summary-img{
+            background-image: url("@{base-url}images/file-upload.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right 0px;
+            @media @large-desktop,@desktop{
+                //background-size: 80%;
+              }
+              @media @tablet{
+                width:100%;
+                //background-size: 150px;
+                background-position: 50% 0;
+              }
+              @media @small-tablet{
+                width:100%;
+                background-size: 90px;
+                background-position: 50% 0;
+              }
+              @media @large-mobile{
+                width:100%;
+                background-size: 90px;
+                background-position: 50% 0;
+                margin-top: 25px;
+              }
+              @media @mobile{
+                width:100%;
+                background-size: 60px;
+                background-position: 50% 0;
+                margin-top: 45px;
+              }
+      } 
+      .carousel-content{
+        .btn-wrap{
+           button{
+              font-size: 16px;
+               @media @mobile{
+                  width:100%;
+              }
+            }
+        }
+      }
+   } 
+}

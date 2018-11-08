@@ -1,0 +1,128 @@
+.main-content{
+  .contact-page-wrap{
+    .contact-page{
+      .contact-card-wrap{
+        .margin(0,15px,15px,0);
+        width:390px;
+        float:left;
+
+        @media @mobile,@large-mobile,@small-tablet,@tablet{
+          float:none;
+          margin: 0 auto 15px;
+        }
+        @media @mobile{
+          width:100%;
+        }
+
+        .contact-card{
+          border-radius: 3px;
+          background-color: @secondary-background;
+          border: solid 1px @border-secondary-color;
+          .padding(15px,0px,15px,15px);
+
+          @media @mobile{
+           text-align:center;
+          }
+
+          .contact-pic-wrap{
+            width:125px;
+            @media @mobile{
+              width:100%;
+            }
+
+            .contact-card-pic{
+              width:100%;
+              @media @mobile{
+                width: 150px;
+              }
+            }
+          }
+          .contact-card-info{
+            .padding(0,0,0,15px);
+
+            @media @mobile{
+              width:auto;
+              .padding(20px,0,0,0);
+              display: inline-block;
+              text-align: left;
+              float:none;
+            }
+            p{
+              color:@base-primary-color;
+            }
+
+            .contact-name{
+              font-size: 16px;
+              font-weight: 600;
+              margin: 0 0 7px;
+              // IE specific font sizing
+              @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                  font-size: 22px;
+              }
+            }
+            .contact-type{
+              font-size: 14px;
+              margin: 0 0 7px;
+
+              .licenseNo{
+                  &:before{
+                      content: "|";
+                      padding-right: 3px;
+                  }
+               }
+            }
+            .contact-phone{
+              font-size: 14px;
+              margin: 0 0 7px;
+              .phone-icon{
+                background-image: url("@{base-url}images/phone_icon_grey.png");
+                height:20px;
+                @media @mobile, @large-mobile{
+                  background-image: url("@{base-url}images/phone_icon_blue.png");
+                  &:hover{
+                    background-image: url("@{base-url}images/phone_icon_blue-hover.png");
+                  }
+                }
+              }
+            }
+            .contact-email{
+              display: block;
+              margin: 0 0 7px;
+              font-size: 14px;
+              .email-icon{
+                 background-image: url("@{base-url}images/email_icon_blue.png");
+                 height:16px;
+                 &:hover{
+                   background-image: url("@{base-url}images/email_icon_blue-hover.png");
+                 }
+              }
+            }
+            .contact-msg{
+              margin: 0 0;
+              font-size: 14px;
+              .msg-icon{
+                background-image: url("@{base-url}images/message_icon_blue.png");
+                height:18px;
+                &:hover{
+                   background-image: url("@{base-url}images/message_icon_blue-hover.png");
+                 }
+              }
+            }
+            .contact-icon{
+              background-repeat: no-repeat;
+              display: inline-block;
+              width:20px;
+              background-size: 100% 100%;
+              margin-right: 10px;
+              vertical-align:middle;
+              @media @mobile{
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

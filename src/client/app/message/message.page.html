@@ -1,0 +1,15 @@
+<sl-loan-actionbar (onLoanSelected)="onLoanSelected($event)"></sl-loan-actionbar>
+<div class="main-content">
+    <div class="message-page-wrap">
+        <h2 class="content-heading">View all the conversations on your loan or start a conversation with your contacts</h2>
+        <div class="message-page row">
+            <contact-list *ngIf="contacts && contacts.length > 0 && selectedLoan" [selectedContact]="selectedContact" [contacts]="contacts"
+                [selectedLoan]="selectedLoan" (onContactSelected)="onContactSelected($event)"></contact-list>
+            <message-window *ngIf="contacts && contacts.length > 0" [selectedContactData]="selectedContact" [selectedLoan]="selectedLoan"
+                [conversation]="conversation" [contacts]="contacts" (onMessageSent)="onMessageSent($event)"></message-window>
+        </div>
+    </div>
+    <div class="text-center no-contacts" *ngIf="contacts && contacts.length === 0">
+        <span>No Contacts Found</span>
+    </div>
+</div>

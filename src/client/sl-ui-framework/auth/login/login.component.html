@@ -1,0 +1,35 @@
+<div class="container-fluid login-body authentication-wrap">
+  <h1 class="login-heading text-center">Please enter your User ID</h1>
+
+  <div class="login-box authentication-box">
+    <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+      <div class="form-group email-id-enter input-div">
+        <input type="text" class="form-control" autofocus formControlName="userName" required>
+        <span class="placeholder-label">User ID</span>
+        <div *ngIf="loginFormErrors.userName !== ''"  class="text-danger errtext-align error-text">
+          <label>{{loginFormErrors.userName}}</label>
+        </div>
+        <div class="capslock-warn " *ngIf="isCapsLockOn">
+          <span class="warning-sign "> </span><span class="warning-text">Caps Lock is On</span>
+        </div>
+      </div>
+
+      <div class="form-group password-enter input-div">
+        <input type="password" class="form-control"  formControlName="password" required>
+        <span class="placeholder-label">Password</span>
+        <div *ngIf="loginFormErrors.password !== ''" class="text-danger errtext-align error-text">
+          <label>{{loginFormErrors.password}}</label>
+        </div>
+      </div>
+      <div class="sign-in">
+        <button type="submit" class="login-button primary-button sign-in-btn text-center" [ngClass]="{disabled: !loginForm.valid}">Sign In</button>
+      </div>
+    </form>
+    <div class="forgot-password text-center">
+      <a  class="forgot-password-link" routerLink='/forgotpassword'>Forgot Your Password?</a>
+    </div>
+    <div class="contact-LO text-center" *ngIf="isStearnsContactVisisble">
+      <a [href]="stearnsContacttrustedUrl" target="_blank" class="loan-officer-contact text-center">Get in touch with a Stearns Loan Officer!</a>
+    </div>
+  </div>
+</div>

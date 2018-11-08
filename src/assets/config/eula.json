@@ -1,0 +1,12 @@
+[
+    {
+        "companyCode": "389",
+        "version": "1.0",
+        "consent": "/assets/config/eula/eula_389.html"
+    },
+     {
+        "companyCode": "590",
+        "version": "1.0",
+        "consent": "/assets/config/eula/eula_590.html"
+    }
+]

@@ -1,0 +1,109 @@
+/*announcement-box*/
+.alert-announce{
+        background-color: @announcement-bg-color;
+        border-radius: 0;
+        color: @announcement-text-color;
+        text-align: center;
+        .margin(0,auto,0,auto);
+        .padding(15px,40px,15px,40px);
+        float: none;
+        width: 100%;
+        /*position: relative;*/
+        position: fixed;
+        bottom: 0;
+        height:87px;
+        left: 0;
+        z-index: 999999;
+       
+        a{
+          color:@announcement-text-color;
+            p{
+            color:@announcement-text-color;
+            font-size:12px;
+            font-family: Lato-Regular;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+            }
+        }
+        .close-btn{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-image: url("@{base-url}images/close-btn.png");
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            cursor: pointer;
+        }
+    }
+
+#announcement-carousel {
+/*caurosal override*/
+    height: 54px;
+    max-width: 700px;
+    margin: 0 auto;
+    .padding(10px,0,10px,0px);
+    //background-image: url("@{base-url}images/caution_icon.png");
+    background-repeat: no-repeat;
+    background-position-y: 12px;
+    .carousel-inner{
+        display: inline-block;
+        vertical-align: middle;
+        padding-top: 10px;
+        .item{
+        }
+    }
+    .carousel-control.right {
+        width: 50px;
+        background-image: none;
+        top: -12px;
+        right: -15px;
+    
+        span.glyphicon{
+            padding: 5px;
+            border: none;
+            height: 40px;
+            width: 40px; 
+            margin-right: -50px;
+        }
+        .glyphicon-chevron-right{
+            background-image: url("@{base-url}images/arrow_rt_icon.png");
+            background-repeat: no-repeat;
+            background-size: 12px;
+            background-position: center;
+            border: none;
+            &::before {
+                content: "";
+            }
+      }
+    }
+    .carousel-control.left {
+        width: 50px;
+        background-image: none;
+        top: -12px;
+        left: -15px;
+   
+        span.glyphicon{
+        padding: 5px;
+        border: none;
+        height: 40px;
+        width: 40px;
+        margin-left: -50px;
+        
+        }
+        .glyphicon-chevron-left{
+            border: none;
+            background-image: url("@{base-url}images/lft_arrow_icon.png");
+            background-repeat: no-repeat;
+            background-size: 12px;
+            background-position: center;
+            &::before {
+                content: "";
+            }
+        }
+}
+}

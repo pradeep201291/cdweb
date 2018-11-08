@@ -1,0 +1,28 @@
+<div *ngIf="isAnnouncementEnabled && announcementList?.length > 0" class="alert alert-announce">
+    <div id="announcement-carousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div *ngFor="let announcement of announcementList; let first=first" [ngClass]="{active:first}" class="item">
+                <a *ngIf="announcement?.announce_link" [href]="announcement?.announce_link" target="_blank" class="">
+                    <p class="">
+                        {{announcement?.announce_text}}
+                    </p>
+                </a>
+                <a style="color:whitesmoke;" *ngIf="!announcement?.announce_link" target="_blank" class="">
+                    <p class="">
+                        {{announcement?.announce_text}}
+                    </p>
+                </a>
+            </div>
+           
+        </div>
+        <!-- Left and right controls -->
+        <a *ngIf="announcementList?.length > 1" class="left carousel-control" href="#announcement-carousel" data-slide="prev" role="button">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a *ngIf="announcementList?.length > 1" class="right carousel-control" href="#announcement-carousel" data-slide="next" role="button">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a>
+    </div>
+    <span class="close-btn" (click)="onAnnouncementClose()"></span>
+</div>

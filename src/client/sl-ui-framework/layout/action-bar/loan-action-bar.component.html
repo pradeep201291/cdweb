@@ -1,0 +1,30 @@
+<div class="status-header-wrap">
+    <div class="status-header">
+        <div class="row">
+            <div *ngIf="hasLoanItems" class="col-sm-6 address-wrap">
+                <div *ngIf="loanCount > 1" class="loan-info">
+                    <p class="loan-no">Loan Number :</p>
+                    <div class="multi-select">
+                        <button class="multiselect-button" (click)="onLoanDropDownClicked($event)">
+                        {{selectedLoanNumber}}
+                            <span *ngIf="!disableSelection" class="glyphicon glyphicon-triangle-bottom select-icon fR"></span>
+                        </button>
+                        <ul *ngIf="isDropdownClicked && !disableSelection" class="select-menu" [ngClass]="{hide: !isDropdownClicked}">
+                            <li *ngFor="let item of loan_collection" (click)="selectedLoanNum(item.loan_num)">
+                                {{item.loan_num}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <p *ngIf="loanCount === 1" class="single-loan-num">{{selectedLoanNumber}}</p>
+                <p class="address">{{address? address : N/A}}</p>
+            </div>
+            <div class="col-sm-6 completion-graph"></div>
+            <div class="col-md-6 text-right" *ngIf="hasLoanItems">
+                <span *ngIf="selectedLoan?.status" class="loan-status">Status : <span class="status-value">{{selectedLoan?.status}}</span></span>
+                <span *ngIf="!selectedLoan?.status" class="loan-status">Status : <span class="status-value">N/A</span></span><br>
+                <span *ngIf="selectedLoan?.est_closing_date" class="closing-date">Est Closing Date : {{selectedLoan?.est_closing_date | date}}</span>
+                <span *ngIf="!selectedLoan?.est_closing_date" class="closing-date">Est Closing Date : TBD</span>
+            </div>
+        </div>
+    </div>
+</div>

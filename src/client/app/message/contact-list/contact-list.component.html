@@ -1,0 +1,30 @@
+<div class="message-cards col-lg-4 col-md-5 col-sm-4 col-xs-12 ">
+    <div class="loan-card-wrap view-all-conv" (click)="selectContact()">       
+
+        <div class="loan-card " [ngClass]="{'loan-card-active ': !selectedContact}">
+            <span class="view-all">All Conversations</span>
+        </div>
+    </div>
+    <div class="loan-card-wrap" *ngFor="let contact of contacts">
+        <div class="loan-card" [ngClass]="{'loan-card-active': selectedContact === contact}" style="cursor:pointer;" (click)="selectContact(contact)">
+            <div class="message-arrow-border">
+                <div class="message-arrow"></div>
+            </div>
+           <div class="card-pic-wrap fL">
+                <img src="{{contact.pic_url}}" />
+            </div>
+            <div class="card-contact-info fL">
+                <p class="contact-name">
+                <span class="loan-num"><span>{{selectedLoan.loan_num}}</span> | </span>
+                <span class="loan-name"><span>{{contact.name}}</span></span>
+                </p>
+                <p class="contact-role">
+                {{contact.role}}
+                </p>
+            </div>
+            <div class="message-notification D">
+                <span *ngIf="contact.unread_count > 0" class="notification-count">{{contact.unread_count}}</span>
+            </div>
+        </div>
+    </div>
+</div>

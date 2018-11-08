@@ -1,0 +1,67 @@
+<header>
+	<div class="header-navigation-wrap">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 header-navigation">
+				<div *ngIf="isLoggedIn" (click)="onHamburgerClick()">
+					<span class="menu-icon" [ngClass]="{'menu-hamburger':hide,'menu-remove':!hide}"></span>
+					<span class="menu-text">{{hide?'MENU':'CLOSE'}}</span>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-3 col-xs-5 logo text-center">
+				<a *ngIf="logoVisibility" href="javascript:void(0);"> <img [src]="logosrc" alt="logo"></a>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-5 col-xs-4 header-control">
+				<div *ngIf="isLoggedIn">
+					<div class=" multi-select user-controls fR" (click)="onSettingsClick($event)">
+						<button class="multiselect-button ">
+							<span class="account-icon"></span>
+							<span class="account-name">{{userName}}</span>
+							<span class="glyphicon glyphicon-triangle-bottom select-icon fR"></span>
+						</button>
+						<ul *ngIf="isSettingsClicked" class="select-menu">
+							<li routerLink="/securitypreference" (click)="removeOverlay()" routerLinkActive="active">
+								Security Preferences
+							</li>
+							<li routerLink="/changepassword"  (click)="removeOverlay()" routerLinkActive="active">
+								Change Password
+							</li>
+							<li class="logout"  (click)="removeOverlay()" (click)="onLogOut()">
+								Log Out
+							</li>
+						</ul>
+					</div>
+					<ul class="noti-msg-nav fR">
+						<li routerLink="/notification" routerLinkActive="active" (click)="removeOverlay()">
+							<span class="noti-icon header-icon"></span>
+							<span *ngIf="notificationCount > 0" class="noti-count">{{notificationCount}}</span>
+						</li>
+						<li (click)="goToMessage()">
+							<span class="msg-icon header-icon"></span>
+							<span *ngIf="messageCount > 0" class="msg-count">{{messageCount}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<div class="session-expire modal fade in" id="session-expire" data-backdrop="static" data-keyboard="false"  role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Session Expiring !!!</h4>
+			</div>
+			<div class="modal-body">
+				<p>Your session is about to expire. Are you still there?</p>
+			</div>
+			<div class="modal-footer action-div text-right">
+				<button type="button" class="btn primary-button continue" (click)="continue()" data-dismiss="modal">Continue</button>
+				<button type="button" class="btn primary-button logout" (click)="onLogOut()" data-dismiss="modal">Log Out</button>
+			</div>
+		</div>
+	</div>
+</div>

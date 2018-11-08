@@ -1,0 +1,13 @@
+<div class="input-wrap single-col ">
+  <div class="question-wrap">
+    <p>What is the expected price value for the property ?</p>
+</div>
+<div>
+    <form [formGroup]="propertyValueForm" novalidate>
+        <div class="regular-input dollar">
+            <input type="text" class="form-control" formControlName="value" placeholder="" />
+            <span>$</span>
+        </div>
+    </form>
+  </div>
+</div>

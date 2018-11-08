@@ -1,0 +1,390 @@
+.view-documents-wrap{
+    
+    .upload-file-wrap{
+        .note-text{
+            display: block;
+            font-weight: 700;
+        }
+        .upload-file{
+            border: dashed 1px @base-text-color;
+            .margin(0,0,0,0);
+            background: @secondary-background;
+            .padding(25px,25px,25px,25px);
+            @media @desktop{
+                     .padding(25px,0,25px,0);
+                }
+                @media @mobile{
+                     .padding(25px,20px,25px,20px);
+                }
+            .file-upload{
+                border-right:1px solid #9b9b9b;
+                .padding(25px,25px,25px,25px);
+                @media @tablet,@small-tablet,@large-mobile,@mobile{
+                     .padding(25px,0,25px,0);
+                }
+                @media @tablet{
+                    width:100%;
+                }
+                @media @tablet,@small-tablet,@large-mobile,@mobile{
+                     border-bottom:1px solid #9b9b9b;
+                     border-right:0;
+                }
+                img{
+                    margin-bottom:25px;
+                }
+                p{
+                    margin-bottom:0;
+                    line-height:1.63;
+                    .browse{
+                        text-decoration: underline;
+                        cursor:pointer;
+                    }
+                }
+            }
+            .drive-upload{
+                .padding(25px,25px,25px,25px);
+                .margin(0,0,0,0);
+                @media @tablet,@small-tablet,@large-mobile,@mobile{
+                     .padding(25px,0,25px,0);
+                }
+                @media @tablet{
+                    width:100%;
+                }
+                .choose-drive-label{
+                    color:@base-primary-color;
+                    margin-bottom:20px;
+                    @media @mobile{
+                        margin-bottom:20px;
+                    }
+                }
+                .dropbox{
+                    @media @mobile{
+                        .padding(0,0,0,0);
+                    }
+                    img{
+                        height:75px;
+                        width:80px;
+                    }
+                    p{
+                        font-size: 14px;
+                        font-weight:600;
+                        margin-top: 5px;
+                    }
+                }
+                .gdrive{
+                    @media @mobile{
+                        .padding(0,0,0,0);
+                    }
+                    img{
+                        height:75px;
+                        width:90px;
+                    }
+                    p{
+                        font-size: 14px;
+                        font-weight:600;
+                        margin-top: 5px;
+                    }
+                }
+                .credential-info{
+                    line-height: 1.5;
+                    font-size: 12px;
+                    margin-top: 50px;
+                    color: #757575;
+                }
+            }
+                
+        }
+        .file-btn-div{
+            .margin(30px,0,30px,0);
+            .uploaded-files{
+                @media @mobile,@large-mobile{
+                    width:100%;
+                    margin-bottom: 10px;
+                }
+                .file{
+                    width:230px;
+                    .padding(20px,20px,20px,20px);
+                    border-radius: 2px;
+                    background-color: @secondary-background;
+                    border: solid 1px #e6e6e6;
+                    font-size: 16px;
+                    color:@base-primary-color;
+                    line-height: normal;
+                    margin-right:15px;
+                    @media @mobile,@large-mobile{
+                        width:180px;
+                        .padding(15px,20px,15px,20px);
+                    }
+                    .file-name{
+                        width:155px;
+                        white-space: nowrap; 
+                        overflow: hidden;
+                        text-overflow: ellipsis; 
+                        display:inline-block;
+                        font-weight: 600;
+                        @media @mobile,@large-mobile{
+                            width:115px;
+                        }
+                    }
+                    .remove-file{
+                        color: #666;
+                    }
+                }
+            }
+            .validation-div{
+                .validation-msg{
+                    font-size:20px;
+                    font-weight: 600;
+                    &.success-text{
+                        color:#6eb919;
+                    }
+                    &.danger-text{
+                        color: @base-secondary-color; 
+                    }
+                }
+            }
+            .upload-button-div{
+                @media @mobile,@large-mobile{
+                    width:100%;
+                    text-align:center;
+                }
+                button{
+                     border-radius: 2px;
+                     border: 0;
+                     font-size:16px;
+                     @media @mobile,@large-mobile{
+                        width:160px;
+                    }
+                }
+            }
+        }  
+        
+     }
+
+     .view-docs{
+
+         .docs-table{
+             width:99.9%;
+            border-collapse: separate;
+            border-radius: 2px;
+            border: 1px solid @border-secondary-color;
+             thead{
+                color: @base-primary-color;
+                 tr{
+                     .doc-name{
+                         min-width:150px;
+                     }
+                     .upload-date{
+                         min-width:175px;
+                     }
+                     .view-btn{
+                         width:180px;
+                     }
+
+                     th{
+                        background: @secondary-background;
+                        vertical-align: middle;
+                        color: @table-head-color;
+                        font-size: 15px;
+                        .padding(10px,15px,10px,15px);
+                        border: 0;
+                        position:relative;
+
+                        .sort-up,.sort-down,.sort{
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            display: inline-block;
+                            cursor: pointer;
+                            position: absolute;
+                           height: 15px;
+                            width: 20px;
+                            top: 12px;
+                             margin-left: 5px;
+                            }
+                        .sort-up{
+                                background-image: url("@{base-url}images/up-sort.png");
+                            }
+                        .sort-down{
+                                background-image:url("@{base-url}images/down-sort.png");
+                            }
+                        .sort{
+                                background-image:  url("@{base-url}images/no-sort.png");
+                            } 
+                    }
+
+                 }
+             }
+             tbody{
+                 border: 0;
+                 color: #606060;
+                 tr{
+                    td{
+                        border: 0;
+                        .padding(15px,15px,15px,15px);
+                        vertical-align: middle;
+                        font-size: 16px;
+                        .doc-icon{
+                            display: inline-block;
+                            width:22px;
+                            height:25px;
+                            background-image: url("@{base-url}images/uploaded-doc.png") ; 
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            vertical-align:middle;
+                            margin-right:15px;
+                        }
+                        .doctype-icon{
+                            display: inline-block;
+                            width:30px;
+                            height:30px;
+                            background-image: url("@{base-url}images/doc_type.png") ; 
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            vertical-align:middle;
+                            margin-right:15px;
+                        }
+                        .imgtype-icon{
+                            display: inline-block;
+                            width:30px;
+                            height:30px;
+                            background-image: url("@{base-url}images/img_type.png") ; 
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            vertical-align:middle;
+                            margin-right:15px;
+                        }
+                        .pdftype-icon{
+                            display: inline-block;
+                            width:30px;
+                            height:30px;
+                            background-image: url("@{base-url}images/pdf_type.png") ; 
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            vertical-align:middle;
+                            margin-right:15px;
+                        }
+                        .txttype-icon{
+                            display: inline-block;
+                            width:30px;
+                            height:30px;
+                            background-image: url("@{base-url}images/txt_type.png") ; 
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            vertical-align:middle;
+                            margin-right:15px;
+                        }
+                        &.view-btn{
+                            text-align: right;
+                            button{
+                                border-radius: 2px;
+                                font-size: 16px;
+                                .padding(5px,16px,7px,16px);
+                                .margin(0,0,0,0);
+                            }
+                        }
+                    }
+                   &:nth-of-type(odd){
+                        background: #f0f0f0;;
+                    }
+                     &:nth-of-type(even){
+                        background: @secondary-background;
+                    }
+                 }
+             }
+         }
+     }
+      .no-documents{
+        background: @secondary-background;
+        color:@base-primary-color;
+        font-size:16px;
+        font-weight: 600;
+        .padding(5px,5px,5px,5px);
+    }
+     .document-pagination{
+        
+    }
+}
+
+ #documentView{
+     .modal-dialog {
+        width:90%;
+        min-height:80%;
+        margin: 100px auto 0;
+        }
+        .modal-header{
+         .padding(0,15px,0,15px);
+            border: 0;
+            h2{
+                display: inline-block;
+            }
+            .close{
+                float: right;
+                margin-top: 20px;
+                font-size:16px;
+                color: #666;
+                opacity: 1;
+                cursor: pointer;
+            }
+            .download{
+                img{
+                    width: 41px;
+                    .margin(10px,0,0,0);
+                }
+                .document-name{
+                    display: inline-block;
+                    vertical-align: bottom;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    font-family: Lato-Regular, sans-serif;
+                    font-weight: 600;
+                    @media @mobile{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .modal-body{
+            height: 90%;
+            img{
+                border: 1px solid #ededed;
+                padding: 15px 25px;
+                width: 150px;
+                margin-bottom:15px;
+            }
+            iframe{
+                width:100%;
+                height:100%;
+                border: 1px solid @border-secondary-color;
+            }
+            pre{
+                width:100%;
+                height:100%;
+                border: 1px solid @border-secondary-color;
+                white-space: normal;
+            }
+            .ng2-pdf-viewer-container{
+                div{
+                    text-align: center;
+                    svg{
+                        position: absolute;
+                    }
+                    canvas{
+                        position: static !important;
+                    }
+                }
+            }
+            .file-upload-label{
+                width: 150px;
+                height:140px;
+                margin-bottom:15px;
+            }
+        }
+        .modal-content {
+            min-height:100%;
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0; 
+    }
+}

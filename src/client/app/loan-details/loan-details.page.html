@@ -1,0 +1,32 @@
+<sl-loan-actionbar (onLoanSelected)="onLoanSelected($event)"></sl-loan-actionbar>
+<div class="main-content">
+	<div class="loan-details-wrap">
+		<h3 class="content-heading">Here are some important details on your loan</h3>
+		<div *ngIf="loanData" class="row panel-wrap">
+			<div class="loan-details-panel borrower-info-wrap col-lg-3 col-md-4 col-sm-12 col-xs-12">
+				<div class="borrower-info-panel details-row-1 details">
+					<h4 class="panel-header">Borrowers</h4>
+					<sl-borrower-info [loanDetails]="loanData"> </sl-borrower-info>
+				</div>
+			</div>
+			<div class="loan-details-panel loan-info-wrap col-lg-6 col-md-8 col-sm-12 col-xs-12">
+				<div class="loan-info-panel details-row-1 details">
+					<h4 class="panel-header">Rate and Terms of the loan</h4>
+					<sl-loan-info [loanDetails]="loanData"> </sl-loan-info>
+				</div>
+			</div>
+			<div class="loan-details-panel monthly-info-wrap col-lg-3 col-md-4 col-sm-6 col-xs-6">
+				<div class="monthly-info-panel details-row-1 details">
+					<h4 class="panel-header">Estimated Monthly Payments</h4>
+					<sl-monthly-info [loanDetails]="loanData"></sl-monthly-info>
+				</div>
+			</div>
+			<div class="loan-details-panel imp-dates-wrap col-lg-12 col-md-8 col-sm-6 col-xs-6">
+				<div class="imp-dates-panel details">
+					<h4 class="panel-header">Important Dates</h4>
+					<sl-impdate-info [loanDetails]="loanData"> </sl-impdate-info>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

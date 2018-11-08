@@ -1,0 +1,14 @@
+<div  class="loan-wrap">
+	<h4 class="section-header">{{resource.widgetTitle}}</h4>
+	<div class="row loan-item-wrap">
+		<div *ngFor="let loanItem of loanItems" class="col-xs-6 col-sm-6 loan-item">
+			<label class="loan-details-label">{{loanItem.lbl}}</label>
+			<p  class="loan-details-value">
+				<span>{{loanItem.val}}</span>
+			</p>
+		</div>
+	</div>
+	<div class="loan-row-2 text-center">
+	<button class="view-more" (click)="viewLoanDetails()"> View More Details</button>			
+    </div>
+</div>

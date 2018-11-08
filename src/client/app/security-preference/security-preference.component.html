@@ -1,0 +1,11 @@
+<div class="security-preference-body">
+    <div class="security-preferences-wrap authentication-wrap">
+        <h1 class="sec-pref-heading login-heading text-center">Two Factor Authentication</h1>
+
+        <view-twofa-settings *ngIf="!isEditable" [securityPreference]='securityPreference' (onChange)="editPreferences($event)" (cancel)="cancel($event)"> </view-twofa-settings>
+        <edit-twofa-settings *ngIf="isEditable" [updateProfileEventArgs]='updateProfileEventArgs' (onChange)="editPreferences($event)"
+            (getOtpCode)="getOtpCode($event)" (saveProfile)="saveProfile($event)" (cancel)="cancel($event)"
+        ></edit-twofa-settings>
+        
+    </div>
+</div>

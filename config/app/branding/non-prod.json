@@ -1,0 +1,506 @@
+{
+	"localhost": {
+		"data": {
+			"company_code": "389",
+			"tag_line": "We can help you!",
+			"hasTrademark": true
+		},
+		"title": {
+			"text": "Stearns Lending CD App"
+		},
+		"stylesheet": {
+			"path": ""
+		},
+		"header": {
+			"logosrc": "/assets/images/logo.png",
+			"logoVisibility": true
+		},
+		"footer": {
+			"isActive": true,
+			"policyContent": "Stearns Lending’s policy is to treat all applicants and borrowers in a fair and consistent manner and without regard to race, color, religion,national origin, age (provided the applicant or borrower has legal capacity to enter into a binding contract),sex, marital status, disability, familial status, receipt of public assistance, or exercise of rights under the Consumer Credit Protection Act, or any other prohibited basis identified under state law. © 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"copyRightContent": "© 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"logosrc": "/assets/images/ehl-white.png",
+			"hyperlinkItems": [
+				{
+					"order": 1,
+					"label": "About Us",
+					"url": "https://stearns.com/about-us/",
+					"isActive": true
+				},
+				{
+					"order": 2,
+					"label": "Contact Us",
+					"url": "https://stearns.com/contact/",
+					"isActive": true
+				},
+				{
+					"order": 3,
+					"label": "NMLS Consumer Access",
+					"url": "http://www.nmlsconsumeraccess.org/",
+					"isActive": true
+				},
+				{
+					"order": 4,
+					"label": "Company NMLS #1854",
+					"url": "#",
+					"isActive": false
+				},
+				{
+					"order": 5,
+					"label": "End User License Agreement",
+					"url": "/assets/config/eula.html",
+					"isActive": true,
+					"isPopup": true,
+					"linkType": 1
+				},
+				{
+					"order": 6,
+					"label": "Privacy Policy",
+					"url": "https://stearns.com/wp-content/themes/stearns/pdf/Stearns-Privacy-Policy.pdf",
+					"isActive": true
+				}
+			]
+		}
+	},
+	"zdvwswbd10.fpfnet.local": {
+		"data": {
+			"company_code": "389",
+			"tag_line": "We can help you!",
+			"hasTrademark": true
+		},
+		"title": {
+			"text": "Stearns Lending CD App"
+		},
+		"stylesheet": {
+			"path": ""
+		},
+		"header": {
+			"logosrc": "/assets/images/logo.png",
+			"logoVisibility": true
+		},
+		"footer": {
+			"isActive": true,
+			"policyContent": "Stearns Lending’s policy is to treat all applicants and borrowers in a fair and consistent manner and without regard to race, color, religion,national origin, age (provided the applicant or borrower has legal capacity to enter into a binding contract),sex, marital status, disability, familial status, receipt of public assistance, or exercise of rights under the Consumer Credit Protection Act, or any other prohibited basis identified under state law.© 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"copyRightContent": "© 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"logosrc": "/assets/images/ehl-white.png",
+			"hyperlinkItems": [
+				{
+					"order": 1,
+					"label": "About Us",
+					"url": "https://stearns.com/about-us/",
+					"isActive": true
+				},
+				{
+					"order": 2,
+					"label": "Contact Us",
+					"url": "https://stearns.com/contact/",
+					"isActive": true
+				},
+				{
+					"order": 3,
+					"label": "NMLS Consumer Access",
+					"url": "http://www.nmlsconsumeraccess.org/",
+					"isActive": true
+				},
+				{
+					"order": 4,
+					"label": "Company NMLS #1854",
+					"url": "#",
+					"isActive": false
+				},
+				{
+					"order": 5,
+					"label": "End User License Agreement",
+					"url": "/assets/config/eula.html",
+					"isActive": true,
+					"isPopup": true,
+					"linkType": 1
+				},
+				{
+					"order": 6,
+					"label": "Privacy Policy",
+					"url": "https://stearns.com/wp-content/themes/stearns/pdf/Stearns-Privacy-Policy.pdf",
+					"isActive": true
+				}
+			]
+		}
+	},
+	"stearnsdmtest.stearnsnetwork.com": {
+		"data": {
+			"company_code": "389",
+			"tag_line": "We can help you!",
+			"hasTrademark": true
+		},
+		"title": {
+			"text": "Stearns Lending CD App"
+		},
+		"stylesheet": {
+			"path": ""
+		},
+		"header": {
+			"logosrc": "/assets/images/logo.png",
+			"logoVisibility": true
+		},
+		"footer": {
+			"isActive": true,
+			"policyContent": "Stearns Lending’s policy is to treat all applicants and borrowers in a fair and consistent manner and without regard to race, color, religion,national origin, age (provided the applicant or borrower has legal capacity to enter into a binding contract),sex, marital status, disability, familial status, receipt of public assistance, or exercise of rights under the Consumer Credit Protection Act, or any other prohibited basis identified under state law.© 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"copyRightContent": "© 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"logosrc": "/assets/images/ehl-white.png",
+			"hyperlinkItems": [
+				{
+					"order": 1,
+					"label": "About Us",
+					"url": "https://stearns.com/about-us/",
+					"isActive": true
+				},
+				{
+					"order": 2,
+					"label": "Contact Us",
+					"url": "https://stearns.com/contact/",
+					"isActive": true
+				},
+				{
+					"order": 3,
+					"label": "NMLS Consumer Access",
+					"url": "http://www.nmlsconsumeraccess.org/",
+					"isActive": true
+				},
+				{
+					"order": 4,
+					"label": "Company NMLS #1854",
+					"url": "#",
+					"isActive": false
+				},
+				{
+					"order": 5,
+					"label": "End User License Agreement",
+					"url": "/assets/config/eula.html",
+					"isActive": true,
+					"isPopup": true,
+					"linkType": 1
+				},
+				{
+					"order": 6,
+					"label": "Privacy Policy",
+					"url": "https://stearns.com/wp-content/themes/stearns/pdf/Stearns-Privacy-Policy.pdf",
+					"isActive": true
+				}
+			]
+		}
+	},
+	"premiadmtest.stearnsnetwork.com": {
+		"data": {
+			"company_code": "590",
+			"tag_line": "Your Move Matters!",
+			"hasTrademark": false
+		},
+		"title": {
+			"text": "Premia Relocation CD App"
+		},
+		"stylesheet": {
+			"path": "/assets/styles/JV/premia-style.min.css"
+		},
+		"header": {
+			"logosrc": "/assets/images/PremiaLogo.png",
+			"logoVisibility": true
+		},
+		"footer": {
+			"isActive": true,
+			"policyContent": "Premia Relocation Mortgage’s policy is to treat all applicants and borrowers in a fair and consistent manner and without regard to race, color, religion, national origin, age (provided the applicant or borrower has legal capacity to enter into a binding contract), sex, marital status, disability, familial status, receipt of public assistance, or exercise of rights under the Consumer Credit Protection Act, or any other prohibited basis identified under state law.",
+			"copyRightContent": "© 2017 Premia Mortgage, LLC. All Rights Reserved.",
+			"logosrc": "/assets/images/ehl-logo.png",
+			"hyperlinkItems": [
+				{
+					"order": 1,
+					"label": "About Us",
+					"url": "https://premiarelocationmortgage.com/about-us/",
+					"isActive": true
+				},
+				{
+					"order": 2,
+					"label": "Contact Us",
+					"url": "https://premiarelocationmortgage.com/contact/",
+					"isActive": true
+				},
+				{
+					"order": 3,
+					"label": "NMLS Consumer Access",
+					"url": "http://www.nmlsconsumeraccess.org/",
+					"isActive": true
+				},
+				{
+					"order": 4,
+					"label": "Company NMLS #458540",
+					"url": "#",
+					"isActive": false
+				},
+				{
+					"order": 5,
+					"label": "End User License Agreement",
+					"url": "/assets/config/eula.html",
+					"isActive": true,
+					"isPopup": true,
+					"linkType": 1
+				},
+				{
+					"order": 6,
+					"label": "Privacy Policy",
+					"url": "https://premiarelocationmortgage.com/wp-content/themes/stearnsjv/pdf/Premia_Privacy_Disclosure.pdf",
+					"isActive": true
+				}
+			]
+		}
+	},
+	"sl.tavant.com": {
+		"data": {
+			"company_code": "389",
+			"tag_line": "We can help you!",
+			"hasTrademark": true
+		},
+		"title": {
+			"text": "Stearns Lending CD App"
+		},
+		"stylesheet": {
+			"path": ""
+		},
+		"header": {
+			"logosrc": "/assets/images/logo.png",
+			"logoVisibility": true
+		},
+		"footer": {
+			"isActive": true,
+			"policyContent": "Stearns Lending’s policy is to treat all applicants and borrowers in a fair and consistent manner and without regard to race, color, religion,national origin, age (provided the applicant or borrower has legal capacity to enter into a binding contract),sex, marital status, disability, familial status, receipt of public assistance, or exercise of rights under the Consumer Credit Protection Act, or any other prohibited basis identified under state law. © 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"copyRightContent": "© 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"logosrc": "/assets/images/ehl-white.png",
+			"hyperlinkItems": [
+				{
+					"order": 1,
+					"label": "About Us",
+					"url": "https://stearns.com/about-us/",
+					"isActive": true
+				},
+				{
+					"order": 2,
+					"label": "Contact Us",
+					"url": "https://stearns.com/contact/",
+					"isActive": true
+				},
+				{
+					"order": 3,
+					"label": "NMLS Consumer Access",
+					"url": "http://www.nmlsconsumeraccess.org/",
+					"isActive": true
+				},
+				{
+					"order": 4,
+					"label": "Company NMLS #1854",
+					"url": "#",
+					"isActive": false
+				},
+				{
+					"order": 5,
+					"label": "End User License Agreement",
+					"url": "/assets/config/eula.html",
+					"isActive": true,
+					"isPopup": true,
+					"linkType": 1
+				},
+				{
+					"order": 6,
+					"label": "Privacy Policy",
+					"url": "https://stearns.com/wp-content/themes/stearns/pdf/Stearns-Privacy-Policy.pdf",
+					"isActive": true
+				}
+			]
+		}
+	},
+	"sl-dev.tavant.com": {
+		"data": {
+			"company_code": "389",
+			"tag_line": "We can help you!",
+			"hasTrademark": true
+		},
+		"title": {
+			"text": "Stearns Lending CD App"
+		},
+		"stylesheet": {
+			"path": ""
+		},
+		"header": {
+			"logosrc": "/assets/images/logo.png",
+			"logoVisibility": true
+		},
+		"footer": {
+			"isActive": true,
+			"policyContent": "Stearns Lending’s policy is to treat all applicants and borrowers in a fair and consistent manner and without regard to race, color, religion,national origin, age (provided the applicant or borrower has legal capacity to enter into a binding contract),sex, marital status, disability, familial status, receipt of public assistance, or exercise of rights under the Consumer Credit Protection Act, or any other prohibited basis identified under state law. © 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"copyRightContent": "© 2017 Stearns Lending, LLC. All Rights Reserved.",
+			"logosrc": "/assets/images/ehl-white.png",
+			"hyperlinkItems": [
+				{
+					"order": 1,
+					"label": "About Us",
+					"url": "https://stearns.com/about-us/",
+					"isActive": true
+				},
+				{
+					"order": 2,
+					"label": "Contact Us",
+					"url": "https://stearns.com/contact/",
+					"isActive": true
+				},
+				{
+					"order": 3,
+					"label": "NMLS Consumer Access",
+					"url": "http://www.nmlsconsumeraccess.org/",
+					"isActive": true
+				},
+				{
+					"order": 4,
+					"label": "Company NMLS #1854",
+					"url": "#",
+					"isActive": false
+				},
+				{
+					"order": 5,
+					"label": "End User License Agreement",
+					"url": "/assets/config/eula.html",
+					"isActive": true,
+					"isPopup": true,
+					"linkType": 1
+				},
+				{
+					"order": 6,
+					"label": "Privacy Policy",
+					"url": "https://stearns.com/wp-content/themes/stearns/pdf/Stearns-Privacy-Policy.pdf",
+					"isActive": true
+				}
+			]
+		}
+	},
+	"jv1.tavant.com": {
+		"data": {
+			"company_code": "590",
+			"tag_line": "Your Move Matters!",
+			"hasTrademark": false
+		},
+		"title": {
+			"text": "Premia Relocation CD App"
+		},
+		"stylesheet": {
+			"path": "/assets/styles/JV/premia-style.min.css"
+		},
+		"header": {
+			"logosrc": "/assets/images/PremiaLogo.png",
+			"logoVisibility": true
+		},
+		"footer": {
+			"isActive": true,
+			"policyContent": "Premia Relocation Mortgage’s policy is to treat all applicants and borrowers in a fair and consistent manner and without regard to race, color, religion, national origin, age (provided the applicant or borrower has legal capacity to enter into a binding contract), sex, marital status, disability, familial status, receipt of public assistance, or exercise of rights under the Consumer Credit Protection Act, or any other prohibited basis identified under state law. © 2017 Premia Mortgage, LLC. All Rights Reserved.",
+			"copyRightContent": "© 2017 Premia Mortgage, LLC. All Rights Reserved.",
+			"logosrc": "/assets/images/ehl-logo.png",
+			"hyperlinkItems": [
+				{
+					"order": 1,
+					"label": "About Us",
+					"url": "https://premiarelocationmortgage.com/about-us/",
+					"isActive": true
+				},
+				{
+					"order": 2,
+					"label": "Contact Us",
+					"url": "https://premiarelocationmortgage.com/contact/",
+					"isActive": true
+				},
+				{
+					"order": 3,
+					"label": "NMLS Consumer Access",
+					"url": "http://www.nmlsconsumeraccess.org/",
+					"isActive": true
+				},
+				{
+					"order": 4,
+					"label": "Company NMLS #458540",
+					"url": "#",
+					"isActive": false
+				},
+				{
+					"order": 5,
+					"label": "End User License Agreement",
+					"url": "/assets/config/eula.html",
+					"isActive": true,
+					"isPopup": true,
+					"linkType": 1
+				},
+				{
+					"order": 6,
+					"label": "Privacy Policy",
+					"url": "https://premiarelocationmortgage.com/wp-content/themes/stearnsjv/pdf/Premia_Privacy_Disclosure.pdf",
+					"isActive": true
+				}
+			]
+		}
+	},
+	"jv1-dev.tavant.com": {
+		"data": {
+			"company_code": "590",
+			"tag_line": "Your Move Matters!",
+			"hasTrademark": false
+		},
+		"title": {
+			"text": "Premia Relocation CD App"
+		},
+		"stylesheet": {
+			"path": "/assets/styles/JV/premia-style.min.css"
+		},
+		"header": {
+			"logosrc": "/assets/images/PremiaLogo.png",
+			"logoVisibility": true
+		},
+		"footer": {
+			"isActive": true,
+			"policyContent": "Premia Relocation Mortgage’s policy is to treat all applicants and borrowers in a fair and consistent manner and without regard to race, color, religion, national origin, age (provided the applicant or borrower has legal capacity to enter into a binding contract), sex, marital status, disability, familial status, receipt of public assistance, or exercise of rights under the Consumer Credit Protection Act, or any other prohibited basis identified under state law. © 2017 Premia Mortgage, LLC. All Rights Reserved.",
+			"copyRightContent": "© 2017 Premia Mortgage, LLC. All Rights Reserved.",
+			"logosrc": "/assets/images/ehl-logo.png",
+			"hyperlinkItems": [
+				{
+					"order": 1,
+					"label": "About Us",
+					"url": "https://premiarelocationmortgage.com/about-us/",
+					"isActive": true
+				},
+				{
+					"order": 2,
+					"label": "Contact Us",
+					"url": "https://premiarelocationmortgage.com/contact/",
+					"isActive": true
+				},
+				{
+					"order": 3,
+					"label": "NMLS Consumer Access",
+					"url": "http://www.nmlsconsumeraccess.org/",
+					"isActive": true
+				},
+				{
+					"order": 4,
+					"label": "Company NMLS #458540",
+					"url": "#",
+					"isActive": false
+				},
+				{
+					"order": 5,
+					"label": "End User License Agreement",
+					"url": "/assets/config/eula.html",
+					"isActive": true,
+					"isPopup": true,
+					"linkType": 1
+				},
+				{
+					"order": 6,
+					"label": "Privacy Policy",
+					"url": "https://premiarelocationmortgage.com/wp-content/themes/stearnsjv/pdf/Premia_Privacy_Disclosure.pdf",
+					"isActive": true
+				}
+			]
+		}
+	}
+}

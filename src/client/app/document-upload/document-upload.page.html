@@ -1,0 +1,11 @@
+<sl-loan-actionbar [disableSelection]="true" (onLoanSelected)="onLoanSelected($event)"></sl-loan-actionbar>
+<div class="main-content">
+    <div class="doc-upload-wrap ">
+        <h3 class="content-heading">Documents listed below are required to process your loan. Please select one or more documents to upload. </h3>
+        <div class="doc-upload-box">
+            <condition-list *ngIf="conditions" [conditions]="conditions"></condition-list>
+            <document-selector *ngIf="conditions" [selectedLoan]="selectedLoan" [conditions]="conditions" (uploadButtonHandler)="upload($event)"
+                (closeButtonHandler)="close($event)"></document-selector>
+        </div>
+    </div>
+</div>

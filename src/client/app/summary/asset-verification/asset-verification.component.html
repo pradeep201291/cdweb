@@ -1,0 +1,19 @@
+<div class="col-sm-12 carousel carousel-4 asset-verification-wrap">
+    <div class="col-sm-10 col-lg-6 col-md-10 carousel-4-wrap asset-verification row">
+        <div class="col-sm-3 col-lg-3 carousel-2-img asset-verification-img summary-img">
+			&nbsp;
+		</div>
+        <div class="col-xs-10 col-sm-9 col-lg-9 carousel-content">
+            <p>
+            {{taskInfo?.description}}
+            </p>
+            <div class="">
+                <button type="button" (click)="showWidget(taskInfo?.need_id,taskInfo?.borrower_id)" class="primary-button">
+                        Yes, Verify Now
+                    </button>
+                <a class="take-dashboard"  href="javascript:void(0);" (click)="loadDashboard()">No, Take me to Dashboard</a>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+[
+    {
+        "loanDetail": "Loan Terms",
+        "data": "$400,000"
+    },
+    {
+        "loanDetail": "Amortization Type(fixed, ARM)",
+        "data": "Rate/Term Refinance"
+    },
+   {
+        "loanDetail": "Interest Rate",
+        "data": "$500,000"
+    },
+   {
+        "loanDetail": "Lock Date",
+        "data": "$0"
+    },
+   {
+        "loanDetail": "Lock Period",
+        "data": "80.00"
+    },
+    {
+        "loanDetail": "Lock Expiration Date",
+        "data": "80.00"
+    },
+    {
+        "loanDetail": "Purchase Price",
+        "data": "Owner Occupied"
+    },
+    {
+        "loanDetail": "Appraised Value",
+        "data": "Yes"
+    },
+    {
+        "loanDetail": "Loan Amount",
+        "data": "First Lien"
+    },
+    {
+        "loanDetail": "LTV",
+        "data": "First Lien"
+    },
+    {
+        "loanDetail": "Appraisal Received Date",
+        "data": "First Lien"
+    },
+    {
+        "loanDetail": "Estimated Principal and Interest Monthly Payment",
+        "data": "First Lien"
+    },
+    {
+        "loanDetail": "Estimated Escrow Monthly Payment",
+        "data": "First Lien"
+    },
+    {
+        "loanDetail": "1st Payment Date",
+        "data": "First Lien"
+    },
+    {
+        "loanDetail": "Clear to Close Status/Date",
+        "data": "First Lien"
+    },
+    {
+        "loanDetail": "Clear to Close Status/Date",
+        "data": "First Lien"
+    },
+    {
+        "loanDetail": "Initial Disclosure Sent Date",
+        "data": "First Lien"
+    },
+     {
+        "loanDetail": "Closing Disclosure Sent Date",
+        "data": "First Lien"
+    }
+]

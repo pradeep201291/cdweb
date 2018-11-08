@@ -1,0 +1,24 @@
+<div class="input-wrap downPayment ">
+  <div class="question-wrap">
+    <p>How much do you have towards your down payment ?</p>
+</div>
+<form [formGroup]="propertyDownPaymentForm" novalidate>
+    <div class="row">
+        <div class="regular-input dollar col-sm-6">
+            <input type="text" class="form-control" formControlName="amount" placeholder="" 
+            onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.keyCode == 46'  onpaste="return false"/>
+            <span>$</span>
+        </div>
+         <div *ngIf="propertyDownPaymentFormErrors.amount" class="error-text text-left">
+             <span>{{propertyDownPaymentFormErrors.amount}}</span>
+        </div>
+        <div class="regular-input percentage col-sm-6">
+            <input type="text" class="form-control" formControlName="percentage" placeholder="" />
+            <span>%</span>
+        </div>
+        <div *ngIf="propertyDownPaymentFormErrors.percentage" class="error-text text-left">
+             <span>{{propertyDownPaymentFormErrors.percentage}}</span>
+        </div>
+    </div>
+  </form>
+</div>

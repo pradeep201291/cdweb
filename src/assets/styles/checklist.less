@@ -1,0 +1,191 @@
+.right-content{
+    .checklist-details{
+      border: 1px solid #e5e5e5;
+      .padding(0px,0px,0px,0px);
+      .white-bg;
+      margin-top: 10px;
+      @media @x-large-desktop,@large-desktop{
+        font-size:20px;
+      }
+      @media @desktop{
+        font-size:18px;
+      }
+      .checklist-details-wrap{
+          .padding(15px,20px,15px,20px);
+          border-bottom:1px solid #e5e5e5;
+          .address-wrap,.loanNo-wrap,.loanSelect-wrap{
+            //padding-left:30px;
+            border-right:1px solid #ccc;
+            @media @tablet,@small-tablet,@desktop,@large-mobile,@mobile{
+              border-right:0;
+              border-bottom:1px solid #ccc;
+            }
+          }
+          .address-wrap{
+              padding-left: 35px;
+              background-image: url("@{base-url}images/check-in.png");
+              background-repeat:no-repeat;
+              background-position:0px 5px;
+              background-size: 25px;
+              h2{
+                .margin(10px,0,10px,0);
+              }
+               @media @tablet,@small-tablet,@desktop,@large-mobile,@mobile{
+                width:100%;
+                //font-size: 22px;
+                padding-bottom:10px;
+              }
+              @media @x-large-desktop,@large-desktop,@desktop{
+                //padding-left: 45px;
+                //background-position:0px 0px;
+              }
+              
+              @media @large-mobile,@mobile{
+                //font-size: 18px;
+                padding-left: 0px;
+                background-position: 6px 3px;
+                background-size: 18px;
+              }
+              @media @mobile{
+                //font-size: 16px;
+                padding-left: 0px;
+                background-position: 6px 3px;
+                background-size: 18px;
+              }
+
+              .map-icon{
+                @media @large-mobile,@mobile{
+                    padding-right:30px;
+                }
+              }
+          }
+          .loanNo-wrap{
+              border:0;
+              @media @tablet,@small-tablet,@desktop,@large-mobile,@mobile{
+                width:100%;
+                //font-size: 22px;
+                padding: 10px 0 10px 10px;
+              }
+              @media @desktop,@tablet,@small-tablet{
+                padding-left:0;
+              }
+              @media @large-mobile,@mobile{
+                //font-size: 18px;
+                padding-left: 0px;
+              }
+              h2{
+                .margin(10px,12px,10px,0);
+                float:left;
+              }
+              .single-loan{
+                  display: inline-block;
+                  font-size: 18px;
+                  .margin(7px,12px,10px,0px);
+              }
+          }
+          .loanSelect-wrap{
+              .padding(0,0,0,0);
+              border:0;
+                @media @tablet,@small-tablet,@desktop,@large-mobile,@mobile{
+                width:100%;
+                //padding-left: 60px;
+                padding-top: 10px;
+              }
+             
+              @media @large-mobile,@mobile{
+                padding-left: 0px;
+              }
+              @media @mobile{
+                //font-size: 14px;
+                padding-left: 0px;
+              }
+
+              select.dropdown{
+                height: 35px;
+              }
+          }
+      }
+    }
+
+    .checklist-table-wrap{
+        .table-head-row{
+            .padding(10px,10px,10px,20px); /*PBI_15_DASHBOARD*/
+            .table-top-label{
+              @media @mobile,@large-mobile,@small-tablet{
+                  width:100%;
+              }
+            }
+            .table-top-btn{
+              z-index: 0;
+              @media @mobile,@large-mobile,@small-tablet{
+                  float:left!important;
+              }
+              .btn{
+                @media @mobile{
+                  min-width: 120px;
+              }
+              }
+              .btn + .btn{
+                margin-left: -3px;
+              }
+            }
+        }
+
+        border:1px solid #e5e5e5;
+        .padding(0px,10px,10px,0px);
+        .btn-primary{
+            border-color: #333333;
+            background-color: #f7f7f5;
+            color:#000;
+            width:180px;
+            border-radius: 5px;
+            @media @tablet,@small-tablet,@large-mobile,@mobile{
+                width:100px;
+             }
+            }
+        .btn-primary.active{
+            background-color: #333333;
+            color:#fff;
+           }
+        .checklist-table{
+             /*PBI_15_DASHBOARD - START*/
+            height: 500px;
+            overflow-y: auto;
+            padding-left: 10px;
+            border-top: 1px solid #E5E5E5;
+            table{
+                width: 100%;
+                tbody{
+                tr{
+                    td{
+                        vertical-align: middle;
+                        &:last-child{
+                        width:275px;
+                        height:50px;
+                        }
+                        &:first-child{
+                        width:600px;
+                        }
+                      }
+                    }
+                }
+            }
+            
+             /*PBI_15_DASHBOARD - END*/
+            td, th{
+                border:0;
+            }   
+            td{font-weight:700}
+            th{font-weight:400;}
+            .table-striped>tbody>tr:nth-of-type(odd){background:#f9f4f4;}     
+            .table-striped>tbody>tr:nth-of-type(even){background:#fefbf7;}     
+        }
+        .closed-table{
+           
+        }
+    }
+}
+
+
+
+          

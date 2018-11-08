@@ -1,0 +1,28 @@
+<div *ngIf="contactList!== null">
+    <div class="contact-card-wrap" *ngFor="let item of contactList">
+        <div class="contact-card ">
+            <div class="contact-pic-wrap fL">
+                <img src="{{item.pic_url}}" class="contact-card-pic" />
+            </div>
+            <div class=" contact-card-info fL">
+                <h3 class="contact-name">
+                    <span>{{item.name}}</span>
+                </h3>
+                <p class="contact-type">
+                    <span>{{item.type}}</span>  <span class="licenseNo" *ngIf="item.license">NMLS# {{item.license}}</span>
+                </p>
+                <p class="contact-phone">
+                    <span class="phone-icon contact-icon"></span><span *ngIf="item.phone">{{item.phone}}</span>
+                    <span *ngIf="!item.phone">NA</span>
+                </p>
+                <p class="contact-email mouse-pointer" (click)="sendMail(item.email)">
+                    <span class="email-icon contact-icon"></span><span>{{item.email}}</span>
+                </p>
+                <p class="contact-msg mouse-pointer" (click)="goToMessage(item.name)">
+                    <span class="msg-icon contact-icon"></span><span>{{resource.messageLinkDisplayText}}</span>
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

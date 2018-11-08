@@ -1,0 +1,7 @@
+<sl-loan-actionbar (onLoanSelected)="onLoanSelected($event)"></sl-loan-actionbar>
+<div class="main-content">
+    <div class="view-documents-wrap">
+        <sl-upload-documents (onUpload)="onUpload($event)" [selectedLoan]="selectedLoan"> </sl-upload-documents>
+        <sl-view-documents [selectedLoan]="selectedLoan"> </sl-view-documents>
+    </div>
+</div>

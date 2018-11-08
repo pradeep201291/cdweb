@@ -1,0 +1,130 @@
+<div class="doc-select-wrap">
+    <small class="form-group center" class="text-danger validation-align" *ngIf="validationMessage">
+         <label>
+         {{validationMessage}}
+         </label>
+    </small>
+    <p class="step-header">You can upload individual document or one combined file with multiple documents. </p>
+    <div class="choose-doc">
+        <button class="btn btn-success choose-doc-btn primary-button" [disabled]="canChooseDocument" (click)="chooseDocument()">Choose Document</button>
+    </div>
+</div>
+
+<div class="completed-docs" *ngIf="uploadedFilesForLoan && uploadedFilesForLoan.length > 0">
+    <span class="step-header">Thank you for uploading your documents. You can view your documents </span><a href="javascript:void(0);" class="take-dashboard" (click)="loadDocuments()"> 'here'</a>
+    <span class="step-header"></span>
+        <div class="upload-status-wrap" *ngFor="let file of uploadedFilesForLoan">
+            <div class="row">
+                <div class="col-lg-6 col-lg-push-6 col-md-6 col-md-push-6 col-sm-6 col-sm-push-6 col-xs-12 status text-right">
+                    <span class="success"><span class="success-icon status-icon"></span><span>Successfully Uploaded</span></span>
+                </div>
+                <div class="col-lg-6 col-lg-pull-6 col-md-6 col-md-pull-6 col-sm-6 col-sm-pull-6 col-xs-12 doc-uploaded">
+                    <p class="document-label status-label">Your Document: </p>
+                    <p class="document-name status-info">{{file.fileName}}</p>
+                </div>
+                <div class="col-xs-12 condition-selected">
+                    <p class="condition-label status-label">Document(s) Requested: </p>
+                    <div class="condition status-info">
+                        <ul>
+                            <li *ngFor="let condition of file.conditions">
+                                {{condition}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear col-xs-12"></div>
+            </div>
+
+
+        </div>
+
+
+</div>
+
+<div class="done-wrap text-right">
+    <button class="btn secondary-button" (click)="done()">Done</button>
+</div>
+
+
+
+
+<!-- Choose Doc Modal -->
+
+<div class="modal fade document-selector" id="documentSelector" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="upload-file row modal-body">
+                <div class="col-xs-12 close-modal text-right">
+                    <span class="glyphicon glyphicon-remove close-modal" data-dismiss="modal"></span>
+                </div>
+                <sl-file-drop [isMultipleFileUpload]="'false'" (uploadFileEventHandler)="uploadFileHandler()" (fileSelectionHandler)="getdroppedFiles($event)"></sl-file-drop>
+                <div class="col-sm-6 col-xs-12  drive-upload row">
+                    <div class="col-xs-12 text-center choose-drive-label">
+                        <span>Or choose a drive</span>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6 text-center icloud">
+                        <img src="@SL_APP_ROOT_PATH@assets/images/DropBox.png" (click)="uploadFromDropBox()" class="mouse-pointer" />
+                        <p (click)="uploadFromDropBox()" class="text-center mouse-pointer">Dropbox</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6 text-center gdrive">
+                        <img src="@SL_APP_ROOT_PATH@assets/images/googledrive.png" (click)="uploadFromGoogleDrive()" class="mouse-pointer" />
+                        <p class="text-center mouse-pointer" (click)="uploadFromGoogleDrive()">Google Drive</p>
+                    </div>
+                    <p class="col-xs-12 text-center credential-info">
+                        Your credentials are not captured by our site, only the file selected by you is securely uploaded.
+                    </p>
+                </div>
+            </div>
+            <input type="file" id="fileUpload" style="display:none" [accept]="acceptedFileTypes" (change)="fileChangeEvent($event)">
+        </div>
+    </div>
+</div>
+
+<!--document status modal-->
+
+<div class="modal fade document-status" id="uploadStatus" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div *ngIf="uploadStatus === 0" class="upload-overlay text-center">
+                <span class="upload-icon">&nbsp;</span>
+            </div>
+            <div class="upload-status-modal row modal-body">
+                <div class="col-lg-6 col-lg-push-6 col-md-6 col-md-push-6 col-sm-6 col-sm-push-6 col-xs-12 status text-right">
+                    <!--<span *ngIf="uploadStatus === -1" class="success"><span class="success-icon status-icon"></span><span>Files uploaded to the site cannot be deleted. Would you like to continue uploading the selected file for above item(s)?</span></span>-->
+                    <span *ngIf="uploadStatus === 1" class="success"><span class="success-icon status-icon"></span><span>Successfully Uploaded</span></span>
+                    <span (click)="upload()" *ngIf="uploadStatus === 2" class="retry ">
+                        <span class="retry-icon status-icon error-tooltip">
+                            <!--<span class="error-tooltip-text">Upload Failed. Please retry.</span>-->
+                    </span>
+                    <span>Internal Server Error.</span>
+                    </span>
+                </div>
+                <div class="col-lg-6 col-lg-pull-6 col-md-6 col-md-pull-6 col-sm-6 col-sm-pull-6 col-xs-12 doc-uploaded">
+                    <p class="document-label status-label">Your Document:</p>
+                    <p class="document-name status-info" [ngClass]="{'red-text': uploadStatus === 2}">{{selectedFile?.name}}</p>
+                </div>
+                <div class="col-xs-12 condition-selected">
+                    <p class="condition-label status-label">Document(s) Requested:</p>
+                    <div class="condition status-info">
+                        <ul>
+                            <li *ngFor="let condition of selectedConditions">
+                                {{condition.cond_desc}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="status-btn-div col-xs-12 text-right">
+                    <span class="success fL file-upload-info" *ngIf="uploadStatus === -1"><span>Files uploaded to the site cannot be deleted. Would you like to continue uploading the selected file for above item(s)?</span></span>
+                    <button *ngIf="uploadStatus !== 1" class="btn btn-default secondary-button" data-dismiss="modal" [disabled]="uploadStatus === 0"
+                        type="button">Cancel</button>
+                    <button *ngIf="uploadStatus !== 1" class="btn btn-success add-btn primary-button" (click)="upload()" [disabled]="uploadStatus === 0"
+                        type="button">{{uploadButtonName}}</button>
+                    <button *ngIf="uploadStatus === 1" class="btn secondary-button add-btn" (click)="close()" [disabled]="uploadStatus === 0"
+                        type="button">Done</button>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <input type="file" id="fileUpload" style="display:none" [accept]="acceptedFileTypes" (change)="fileChangeEvent($event)">
+        </div>
+    </div>
+</div>

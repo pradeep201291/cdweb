@@ -1,0 +1,46 @@
+<sl-loan-actionbar (onLoanSelected)="onLoanSelected($event)"></sl-loan-actionbar>
+
+<div class="main-content">
+    <div class="notification-wrap">
+        <h3 class="content-heading">Notifications</h3>
+        <div class="notification-list">
+            <div *ngIf="notificationList !== null" class="action">
+                <div class="read fR">
+                    <a (click)="deleteSelected()"><label  class="delete mouse-pointer"><span class="delete-icon icon"></span>Delete</label></a>
+                    <a (click)="readSelected()"><label class="mark-read mouse-pointer"><span class="read-icon icon"></span>Mark as Read</label></a>
+                    <a (click)="unreadSelected()"><label  class="mark-unread mouse-pointer"><span class="unread-icon icon"></span>Mark as Unread</label></a>
+                </div>
+                <div class="select-all fL">
+                    <div class="check fL">
+                        <input type="checkbox" (change)="selectAllNotifications()" [(ngModel)]="selectAllNotification" id="chkBoxSelectAll" />
+                        <label class="custom-checkbox regular-checkbox" for="chkBoxSelectAll"></label>
+                    </div>
+                    <label class="select" for="chkBoxSelectAll">Select All</label>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div *ngIf="filteredNotifications" class="notification-content">
+                <div class="msg-row" *ngFor="let notification of filteredNotifications;  let i = index">
+                    <div class=" check fL">
+                        <input type="checkbox" id="{{ i + 1 }}" (change)="selectNotification(notification)" [(ngModel)]="notification.isSelected"
+                        />
+                        <label class="custom-checkbox regular-checkbox" [attr.for]="i + 1"></label>
+                    </div>
+                    <div class="message-text" [ngClass]="{'read-msg': notification.status_type === 2, 'unread-msg': notification.status_type === 1}">
+                        <div class="msg  fL">
+                            <label [attr.for]="i + 1">{{notification.message_text}}</label>
+                        </div>
+                        <div class="msg-info fR">
+                            <span>{{ notification?.message_date ? (notification.message_date | dateformat ) : "-" }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="filteredNotifications.length === 0 && isNotificationLoaded" class="no-noti-msg text-center">
+                <div class="msg-row">
+                    <span>You have caught up with everything. No new notifications</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

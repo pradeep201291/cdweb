@@ -1,0 +1,88 @@
+.main-content{
+    .loan-details-wrap{
+            .padding(0,0,0,0);
+           .panel-wrap{ 
+               
+            .loan-details-panel{
+                @media @mobile{
+                    width:100%;
+                }
+                .details{
+                    .padding(15px,15px,15px,15px);
+                    border-radius: 2px;
+                    background-color: @secondary-background;
+                    border: solid 1px @border-secondary-color;
+                    margin-bottom:20px;
+                    .panel-header{
+                        font-size: 16px;
+                        font-weight: 600;
+                        .margin(0,0,0,0);
+                    }
+                    .loan-details-content{
+                        .padding(20px,0,0,0);
+                            .loan-element{
+                            min-height:50px;
+                            font-size:14px;
+                            padding-bottom: 10px;
+                            @media @mobile{
+                                width: 100%;
+                            }
+                            .loan-label{
+                                .margin(0,0,0,0);
+                                font-size: 14px;
+                                color: @label-text-color;
+                            }
+                            .loan-value{
+                                .margin(0,0,0,0);
+                                font-size: 16px;
+                                color:@base-primary-color;
+                             }
+                        }
+                        .primary-element{
+                            font-weight:600;
+                                // height:80px;
+                                // @media @mobile{
+                                // height:65px;
+                                // }
+                                // .loan-label{
+                                //     font-size:18px;
+                                // text-align: center; 
+                                // @media @mobile,@large-mobile,@small-tablet{
+                                //     text-align: left;
+                                // }
+                                // }
+                                // .loan-value{
+                                //     text-align: center; 
+                                //     @media @mobile,@large-mobile,@small-tablet{
+                                //     text-align: left;
+                                // }
+                                // }
+                        }
+
+                        &.monthly-payment-content{
+                            .loan-element{
+                                min-height:40px;
+                                height:auto;
+                                padding-bottom: 0px;
+                            }
+                            .operator-div{
+                                line-height: 1;
+                                padding-bottom: 0px;
+                                color:#9b9b9b;
+                                span{
+                                    font-size:22px;
+                                    font-weight: 600;
+                                }
+                            }
+                            .separator-div{
+                                hr{
+                                    .margin(10px,0,10px,0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

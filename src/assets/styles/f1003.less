@@ -1,0 +1,390 @@
+.main-content{
+    // padding-top: 118px;
+        .status-header-wrap{
+            background: @secondary-background;
+            position: fixed;
+            top: 89px;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            box-shadow: 0px 2px 5px #ccc;
+            @media @mobile, @large-mobile{
+                top: 75px;
+            }
+            .status-header{
+                max-width: 1320px;
+                margin: 0 auto;
+                .padding(15px,15px,15px,15px);
+                .address-wrap{
+                    @media @small-tablet,@large-mobile,@mobile{
+                    border-bottom: 1px solid #ccc;
+                    }
+                .loan-info{
+                    font-size: 16px;
+                    color: #193a60;
+                    font-weight: 600;
+                    .loan-no{
+                        display: inline-block;
+                        margin: 0;
+                        color: #193a60;
+                    }
+                    .multi-select{
+                        .padding(0,15px,0,5px);
+                        .multiselect-button{
+                            font-family: Lato-Regular, sans-serif;
+                            border:0;
+                            outline: 0;
+                            border-radius: 0;
+                            color: #193a60;
+                            .padding(0,0,0,0);
+                            height:auto;
+                            background: transparent;
+                            &:active{
+                                outline:0;
+                                border: 0;
+                            }
+
+                            .select-icon{
+                                font-size: 9px;
+                                color: #193a60;
+                                display: inline-block;
+                                .padding(5px,0,0,5px);
+                            }
+                        }
+                        
+                        .select-menu{
+                            left: -2px;
+                            right: 0;
+                            top: 20px;
+                            border: 1px solid @border-secondary-color;
+                            display: none;
+                            &:hover{
+                                display: block;
+                            }
+                        }
+                        &:hover{
+                            .select-menu{
+                                display: block;
+                            }
+                        }
+                    }
+                    .single-loan-num{
+                        display: inline-block;
+                        margin: 0;
+                        color: #193a60;
+                    }
+                }
+                .address{
+                    font-size: 14px;
+                    display: block;
+                    .margin(5px,0,0,0);
+                    color: #777;
+                    }
+                }
+            }
+        }
+
+        //form
+        .form-1003-wrap{
+            background: @secondary-background;
+            border: 1px solid @border-primary-color;
+            border-radius: 5px;
+
+            .card-wrap{
+
+                &.summary-wrap{
+                    .input-wrap{
+                        .cards-wrap{
+                            max-width: 480px;
+                            margin: 0 auto;
+                            text-align: left;
+                            .section-card{
+                                width: 130px;
+                                height: 125px;
+                                margin: 0 10px 15px;
+                                display: inline-block;
+                                position: relative;
+                                border: 1px solid #ccc;
+                                box-shadow: 0 0 4px #aaa;
+                                .action-text{
+                                    position: absolute;
+                                    top: 0;
+                                    width: 100%;
+                                    text-align: center;
+                                    margin-top: 5px;
+                                     font-size: 15px;
+                                     font-weight: 600;
+                                     &.resume{
+                                         color: #407306;
+                                     }
+                                     &.validate{
+                                         color: @error-color;
+                                     }
+                                }
+                                .icon-div{
+                                    position: absolute;
+                                    top:0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    height: 55px;
+                                    margin: auto;
+                                    background-size: auto 40px;
+                                    background-repeat: no-repeat;
+                                    background-position: center center;
+                                    text-align: center;
+                                    &.personal-icon{
+                                        background-image: url("@{base-url}images/Personal.png");
+                                    }
+                                    &.borrower-icon{
+                                        background-image: url("@{base-url}images/Borrowers.png");
+                                        background-size: 42px;
+                                    }
+                                    &.property-icon{
+                                        background-image: url("@{base-url}images/Property.png");
+                                    }
+                                    &.income-icon{
+                                        background-image: url("@{base-url}images/Income.png");
+                                    }
+                                    &.assets-icon{
+                                        background-image: url("@{base-url}images/assets.png");
+                                    }
+                                    &.resume-icon{
+                                        background-image: url("@{base-url}images/Resume.png");
+                                    }
+
+                                   .items-left{
+                                       background: @error-color;
+                                       color: @secondary-text-color;
+                                       display: inline-block;
+                                       border-radius: 50%;
+                                       width: 20px;
+                                       height: 20px;
+                                       font-size: 12px;
+                                       .padding(2px,0,2px,0);
+                                       margin-left: 25px;
+                                       vertical-align: top;
+                                   } 
+                                }
+                                .status-text{
+                                    position: absolute;
+                                    bottom: 0;
+                                    text-align: center;
+                                    width: 100%;
+                                    font-size: 15px;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.welcome-wrap{
+                    .form-header{
+                        border-bottom: 0;
+                    }
+                }
+                &.welcome-wrap,&.summary-wrap{
+                    .question-wrap{
+                        .welcome-text{
+                            font-size: 20px;
+                            font-weight: 600;
+                            margin-bottom: 15px;
+                        }
+
+                        .welcome-icon{
+                            background-image: url("@{base-url}images/handshake.png");
+                            background-repeat: no-repeat;
+                            background-size: 60px;
+                            background-position: 4px center;
+                            border: 0!important;
+                        }
+                    }
+                }
+
+                .form-header{
+                    .padding(20px,20px,20px,20px);
+                    border-bottom: 1px solid @border-primary-color;
+
+                    .title{
+                            font-size: 22px;
+                            font-weight: 700;
+                            color: #193a60;
+                    }
+                    .menu{  
+                            display: inline-block;
+                            width: 30px;
+                            height: 30px;
+                            background-image: url("@{base-url}images/GreyBento.png");
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            cursor: pointer;
+                    }
+                    .back{
+                            display: inline-block;
+                            width: 30px;
+                            height: 30px;
+                            background-image: url("@{base-url}images/Arrow-backGrey.png");
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            cursor: pointer;
+                    }
+                }
+
+                .form-content{
+                    .padding(40px,40px,20px,40px);
+
+                    @media @mobile{
+                        .padding(40px,20px,20px,20px);
+                    }
+
+                    .question-wrap{
+                        .card-icon{
+                            height: 50px;
+                            width: 70px;
+                            display: inline-block;
+                            border: 1px solid #ccc;
+                            margin-bottom: 20px;
+                        }
+                    }
+                    
+                    .button-wrap{
+                        clear: both;
+                        button{
+                            .padding(15px,80px,15px,80px);
+                                font-size: 18px;
+                                font-weight: normal;
+                                .margin(20px,0,20PX,0);
+                                border-radius: 2px;
+                                border: 0;
+                                background: #193a60;
+                                color: #ffffff;
+                        }
+                    }
+
+                    .carousel-wrap{
+                        //only for carousel
+                        margin-top: -40px;
+                        #FormCarousel{
+                             min-height: 500px;
+                            position: relative;
+
+                            .carousel-inner{
+                                 .padding(50px,0px,0px,0px);
+
+                                .item{
+                                    >div{
+                                        .margin(0,0,20px,0);
+                                    }
+                                }
+                            }
+
+                            ol.carousel-indicators{
+                                top: 20px;
+                                z-index: 0;
+                                li{
+                                    background-color: @car-indicator-color;
+                                    border: 1px solid @car-indicator-color;
+
+                                    &.active{
+                                        background-color: @car-indicator-active-color;
+                                        border: 1px solid @car-indicator-active-color;
+                                    }
+                                }
+                                    
+                            }
+                        }
+                    }
+                    &.edit-section{
+                        max-width: 750px;
+                        .margin(0,auto,15px,auto);
+                        .edit-panel{
+                            margin-bottom: 15px;
+                            border: solid 1px #e6e6e6;
+                            .padding(0,0,0,25px);
+                            .panel-head{
+                                border-bottom: solid 1px #e6e6e6;
+                                .padding(10px,10px,10px,0);
+                                .edit-btn{
+                                    .margin(0,0,0,0);
+                                    .padding(5px,16px,2px,16px);
+                                    font-size: 14px;
+                                }
+                                .edit-title{
+                                    display: inline-block;
+                                    vertical-align: sub;
+                                    font-weight: bold;
+                                }
+                            }
+                            .panel-content{
+                                font-size: 14px;
+                                .padding(10px,10px,10px,0);
+                                color: #757575;
+                                p{
+                                    color: #757575;
+                                }
+                                &.address{
+                                    p{
+                                        margin-bottom: 0;
+                                    }
+                                }
+                                .info-row{
+                                    @media @mobile{
+                                        margin-bottom: 15px;
+                                    }
+                                   .info-label{
+                                      @media @mobile{
+                                        text-align: left;
+                                        width: 100%;
+                                    } 
+                                   } 
+                                   .info-value{
+                                       @media @mobile{
+                                        width: 100%;
+                                       } 
+                                   }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            
+
+            
+        }
+    //contact details
+  .contact-details{
+    ul{
+      li.phone-icon{
+          .icon-span{
+            background-image: url("@{base-url}images/phone-icon-green.png");
+            &:hover{
+                background-image: url("@{base-url}images/phone-icon-green.png");
+            }
+          }
+        }
+        li.message-icon{
+          a{
+            .icon-span{
+            background-image: url("@{base-url}images/message-green.png");
+             &:hover{
+                background-image: url("@{base-url}images/message-green.png");
+            }
+            }
+          }
+        }
+        li.email-icon{
+          a{
+            .icon-span{
+              background-image: url("@{base-url}images/mail.png");
+               &:hover{
+                background-image: url("@{base-url}images/mail.png");
+                }
+            }
+          }
+      }
+    }
+}
+    
+}

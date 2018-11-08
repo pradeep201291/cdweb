@@ -1,0 +1,35 @@
+{
+    "filePaths": {
+        "privateLabel": {
+            "src": "./src/assets/config/private-label.json",
+            "dest": "./dist/assets/config"
+        },
+        "eula": {
+            "src": "./src/assets/config/eula.json",
+            "dest": "./dist/assets/config"
+        },
+        "webConfig": {
+            "src": "./config/web",
+            "dest": "./dist"
+        },
+        "typescriptFiles": {
+            "src": "./src/client/app/**/*.ts"
+        },
+        "packageConfig": {
+            "src": "./package.json",
+            "dest": "./"
+        },
+        "version": {
+            "src": "./src/client/app/core/global-configuration/version.json",
+            "dest": "./src/client/app/core/global-configuration"
+        },
+        "default": {
+            "src": "./src",
+            "dest": "./dist"
+        }
+    },
+    "dev": {
+        "host": "localhost",
+        "port": 8080
+    }
+}

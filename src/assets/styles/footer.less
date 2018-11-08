@@ -1,0 +1,202 @@
+/*footer*/
+footer{
+  /*height: 130px;*/
+  
+  background: @footer-bg-color;
+  color:@footer-text-color;
+  //.padding(15px,0,15px,0);
+  .padding(40px,0,40px,0);
+  clear: both;
+
+  /*@media @x-large-desktop{
+    height: 140px;
+  }
+  @media @large-desktop{
+    height: 145px;
+  }
+  @media @desktop,@tablet,@small-tablet{
+    height: 180px;
+  }
+  @media @large-mobile{
+      height: 220px;
+  }
+  @media @mobile{
+      height: 340px;
+  }*/
+      .foot-wrap{
+        max-width: 1320px;
+        margin: 0 auto !important;
+
+        .foot-links {
+            text-align: center;
+
+            .loggedIn-logo{
+              display: none;
+            }
+
+        ul{
+          overflow:hidden;
+          /*width: 90%;*/
+
+          @media @mobile{
+            /*width: 100%;*/
+          }
+          li{
+            display: inline-block;
+            margin-right:@margin5;
+            font-size:13px;
+            
+            &:after{
+              content:"|"
+            }
+            &:last-child{
+              margin-right: @zero;
+              &:after{
+                content:""
+              }
+            }
+            
+          }
+        }
+        p{
+          margin-bottom: 0;
+          /**
+            *   The below change is as to fix the bug #2640
+            */
+          &.copyright{
+            color: @secondary-text-color;
+            font-size: 14px;
+          }
+        }
+    }
+
+    .foot-note{
+        border-top: 1px solid #fff;
+        img{
+          float:left;
+          .margin(10px,15px,0,0);
+          height: 50px;
+
+          &.white-logo{
+              display: inline-block;
+          }
+          &.black-logo{
+              display: none;
+          }
+        }
+        p{
+          font-size:12px;
+          margin-bottom: 0;
+          .padding(12px,0,0,0);
+        }
+      }
+    }
+      
+
+
+  
+&.regular-footer{
+  /*.padding(25px,0,25px,0);*/
+  .foot-links{
+    max-width: 650px;
+    
+    .loggedIn-logo{
+      display: inline-block;
+      float: left;
+    }
+    
+    ul{
+      text-align:left;
+      .padding(0,0,0,20px);
+      li{
+        &.copyright{
+          /*color: @base-text-color;*/
+          color: @footer-text-color-regular;
+          font-weight: 600;
+        }
+        &:after{
+          //content:"|";
+          color: @base-text-color;
+          font-weight: 600;
+        }
+        a,span{
+            /*color: @base-text-color;*/
+            color: @footer-text-color-regular;
+            font-weight: 600;
+        }
+      }
+    }
+  }
+  .foot-note{
+    display: none;
+    border-top: 1px solid @base-text-color;
+    p{
+        color: @base-text-color;
+        font-weight: 600;
+    }
+    img{
+      &.white-logo{
+          display: none;
+      }
+      &.black-logo{
+          display: inline-block;
+      }
+    }
+  }
+}
+
+.row{.margin(0,0,0,0)}
+}
+
+.eula-modal{
+  z-index: 9999999 !important;
+  .modal-dialog{
+     width: 70%;
+     margin: 100px auto 0;
+     @media @mobile,@large-mobile,@small-tablet{
+       width: 90%;
+     }
+     @media @mobile{
+       height: 400px;
+     }
+    .modal-content{
+      border-radius: 2px;
+      .padding(0px,5px,0px,5px);
+      .modal-header{
+        .modal-title{
+          font-size: 24px;
+        }
+      }
+      .modal-body{
+        max-height: 500px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        border-bottom: 1px solid #e1e1e1;
+        .padding(10px,10px,10px,10px);
+         @media @mobile{
+          max-height: 290px;
+        }
+        .eula-body{
+          .padding(5px,5px,5px,5px);
+          height: 400px;
+           @media @mobile{
+              height: 270px;
+            }
+          position: relative;
+           .eula-frame{
+                  border: none;
+                  position: relative;
+                  
+                }
+        }
+      }
+      .modal-footer{
+        border: 0;
+        text-align: center;
+        button{
+          .margin(0,0,0,0);
+        }
+      }
+    }
+  }
+}

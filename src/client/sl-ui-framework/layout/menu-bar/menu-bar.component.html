@@ -1,0 +1,7 @@
+<div class="left-nav" [ngClass]="{'slideInLeft':showMenu,'slideOutLeft':!showMenu}">
+	<ul>
+		<li *ngFor="let menu of menuBar">
+			<sl-menu-item [menu]="menu"> </sl-menu-item>
+		</li>
+	</ul>
+</div>

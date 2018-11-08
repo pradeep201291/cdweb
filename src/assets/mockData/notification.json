@@ -1,0 +1,42 @@
+[
+    {
+        "message": "An underwriter is currently reviewing your application and will communicate the loan decision in a couple of days",
+        "date": "08/18/2016",
+        "id": 1,
+        "status": "unread",
+        "type": "loan",
+        "isChecked": false
+    },
+    {
+        "message": "We have received all supporting documents for processing your loan application further",
+        "date": "08/19/2016",
+        "id": 2,
+        "status": "read",
+        "type": "loan",
+        "isChecked": false
+    },
+    {
+        "message": "Your rate lock request has been successfully submitted",
+        "date": "08/20/2016",
+        "id": 3,
+        "status": "unread",
+        "type": "loan",
+        "isChecked": false
+    },
+    {
+        "message": "On 08/27/2016 from 11.30 PM PST to 08/28/2016 02:00 AM PST.You can always drop us a message.",
+        "date": "08/19/2016",
+        "id": 4,
+        "status": "read",
+        "type": "broadcast",
+        "isChecked": false
+    },
+    {
+        "message": "You will not able to access The website will undergo a scheduled maintenance",
+        "date": "08/20/2016",
+        "id": 5,
+        "status": "unread",
+        "type": "broadcast",
+        "isChecked": false
+    }
+]

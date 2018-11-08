@@ -1,0 +1,61 @@
+{
+    "serviceConfig": {
+        "baseUrl": "https://apinonprod.stearns.com/test2/apigateway/",
+        "AuthUrl": "https://apinonprod.stearns.com/test2/AuthServer/",
+        "loginUrl": "api/auth/login",
+        "logOutUrl": "api/auth/logout",
+        "changePasswordUrl": "api/auth/v2/change_password",
+        "updateConsentUrl": "api/auth/v2/update_consent",
+        "methodUrl": "Methods/api/method/",
+        "lookupUrl": "lookups/api/lookup/",
+        "getAllSummaryForUserUrl": "get_summary_all",
+        "getSummaryForLoanUrl": "get_summary",
+        "getDashboardForLoanUrl": "get_dashboard",
+        "getMyLoansUrl": "get_my_loans",
+        "getContactUrl": "get_contacts",
+        "getAnnouncementsUrl": "Methods/api/announcements",
+        "getNotificationsCount": "Notifications/api/notification/get_unread_count",
+        "getNotificationsForLoan": "Notifications/api/notification/get",
+        "markNotificationAsRead": "Notifications/api/notification/mark_read",
+        "markNotificationAsUnRead": "Notifications/api/notification/mark_unread",
+        "deleteNotification": "Notifications/api/notification/delete",
+        "getBroadcastNotifications": "Notifications/api/notification/get_broadcast_msgs",
+        "sendTokenUrl": "api/auth/v2/send_verification_code",
+        "resetPassswordUrl": "api/auth/v2/forget_password",
+        "setFirstTimePassswordUrl": "api/auth/set_first_time_password",
+        "openSameTab": "www.esign.com || Access to this site is blocked",
+        "getLoanDetailUrl": "get_loan_details",
+        "getCustomerContactUrl": "api/auth/v2/get_customer_contact",
+        "getMessageDataForLoan": "Messages/api/message/get",
+        "postMessageForLoan": "Messages/api/message/put_message",
+        "getConditionsUrl": "get_conditions",
+        "uploadDocumentUrl": "documents/api/document/upload",
+        "getUnreadCount": "Messages/api/message/get_unread_count",
+        "markUnreadUrl": "Messages/api/message/mark_read",
+        "documentsUrl": "Documents/api/document",
+        "viewDocumentsUrl": "Documents/api/document/get_by_id",
+        "updateProfileUrl": "api/auth/v2/update_profile",
+        "getFormWidgetUrl": "External/api/formfree/get_widget",
+        "getNeedListUrl": "get_needs_list",
+        "getDocutechSso": "External/api/docutech/get_sso_token"
+    },
+    "security": {
+        "userType": "Consumer",
+        "idleTimeout": 1800000,
+        "popupTimeout": 1680000
+    },
+   "cloudDrive": {
+        "googleDrive": {
+            "developerKey": "AIzaSyD8BZj6fdeGtLtI-qQu3AlGFo3eHtlR6Sc",
+            "clientId": "613687664395-4qk675js94qh4bbfsufj2qujb2q2kpqf.apps.googleusercontent.com",
+            "appId": "613687664395",
+            "scope": "https://www.googleapis.com/auth/drive",
+            "driveApi": "https://www.googleapis.com/drive/v2/files/",
+            "locale": "en"
+        },
+        "dropbox": {
+            "appKey": "i47v2gp4muxbxin"
+        }
+    },
+    "encodePassword": true
+}
